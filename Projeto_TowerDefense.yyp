@@ -17,6 +17,7 @@
     {"$GMFolder":"","%Name":"Notes","folderPath":"folders/Notes.yy","name":"Notes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Animados","folderPath":"folders/Objects/Animados.yy","name":"Animados","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"inimigos","folderPath":"folders/Objects/Animados/inimigos.yy","name":"inimigos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Particle Systems","folderPath":"folders/Particle Systems.yy","name":"Particle Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Paths","folderPath":"folders/Paths.yy","name":"Paths","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -28,7 +29,9 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "IncludedFiles":[],
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"st_inimigo.json","CopyToMask":-1,"filePath":"datafiles","name":"st_inimigo.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+  ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
@@ -36,6 +39,7 @@
   },
   "name":"Projeto_TowerDefense",
   "resources":[
+    {"id":{"name":"oBombardeiro","path":"objects/oBombardeiro/oBombardeiro.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oCasa","path":"objects/oCasa/oCasa.yy",},},
     {"id":{"name":"oColisao","path":"objects/oColisao/oColisao.yy",},},
@@ -46,8 +50,9 @@
     {"id":{"name":"rJogo","path":"rooms/rJogo/rJogo.yy",},},
     {"id":{"name":"MACRO","path":"scripts/MACRO/MACRO.yy",},},
     {"id":{"name":"scrGlobal","path":"scripts/scrGlobal/scrGlobal.yy",},},
-    {"id":{"name":"scrInimigoEstados","path":"scripts/scrInimigoEstados/scrInimigoEstados.yy",},},
-    {"id":{"name":"scrPayerEstados","path":"scripts/scrPayerEstados/scrPayerEstados.yy",},},
+    {"id":{"name":"scrInimigo","path":"scripts/scrInimigo/scrInimigo.yy",},},
+    {"id":{"name":"scrPayer","path":"scripts/scrPayer/scrPayer.yy",},},
+    {"id":{"name":"sBombardeiro","path":"sprites/sBombardeiro/sBombardeiro.yy",},},
     {"id":{"name":"sCasa","path":"sprites/sCasa/sCasa.yy",},},
     {"id":{"name":"sColisao","path":"sprites/sColisao/sColisao.yy",},},
     {"id":{"name":"sInimigo","path":"sprites/sInimigo/sInimigo.yy",},},

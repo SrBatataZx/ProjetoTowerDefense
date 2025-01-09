@@ -1,5 +1,4 @@
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
+/// @description colisao
 if (place_meeting(x + velh, y, _colisao)){
 	var _velh = sign(velh);
 	while(!place_meeting(x + _velh, y, _colisao)){

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrPayerEstados",
+  "%Name":"scrPayer",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrPayerEstados",
+  "name":"scrPayer",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

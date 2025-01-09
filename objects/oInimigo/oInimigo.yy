@@ -10,8 +10,8 @@
   "name":"oInimigo",
   "overriddenProperties":[],
   "parent":{
-    "name":"Animados",
-    "path":"folders/Objects/Animados.yy",
+    "name":"inimigos",
+    "path":"folders/Objects/Animados/inimigos.yy",
   },
   "parentObjectId":{
     "name":"oEntidade",
