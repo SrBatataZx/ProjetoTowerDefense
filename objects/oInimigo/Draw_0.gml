@@ -11,6 +11,7 @@ if(global.debug = true){
 	var _circle_2 = draw_circle_color(x,y,500,c_green,c_green, true)
 	var _circle_3 = draw_circle_color(x,y,200,c_red,c_red, true)
 	draw_text(x - 60,y,distance_to_object(oCasa))
+	draw_text(x,y,vel)
 	draw_set_valign(-1)
 	draw_set_halign(-1)
 }

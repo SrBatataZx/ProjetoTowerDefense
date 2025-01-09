@@ -3,6 +3,5 @@
 
 // Inherit the parent event
 event_inherited();
+status_inimigo("bombardeiro","nivel_1")
 
-estado = I_ESTADO.PARADO;
-estado_txt = "parado";

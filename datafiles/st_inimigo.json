@@ -1,0 +1,54 @@
+{
+    "inimigos":[
+        {
+            "funcao": "bombardeiro",
+            "status": {
+                "vida": 10,
+                "dano": 2,
+                "velo": 2
+            }
+        },
+        {
+            "funcao": "atirador",
+            "status": {
+                "vida": 5,
+                "dano": 4,
+                "velo": 2
+            }
+        },
+        {
+            "funcao": "magico",
+            "status": {
+                "vida": 8,
+                "dano": 2,
+                "velo": 2
+            }
+        }
+    ],
+    "multiplicadores":[
+        {
+            "nivel": "nivel_1",
+            "status_mult": {
+                "vida": 1,
+                "dano": 1,
+                "velo": 1
+            }
+        },
+        {
+            "nivel": "nivel_2",
+            "status_mult": {
+                "vida": 1.5,
+                "dano": 1.5,
+                "velo": 1.5
+            }
+        },
+        {
+            "nivel": "nivel_3",
+            "status_mult": {
+                "vida": 2,
+                "dano": 2,
+                "velo": 2
+            }
+        }
+    ]
+}
