@@ -39,6 +39,7 @@
   },
   "name":"Projeto_TowerDefense",
   "resources":[
+    {"id":{"name":"oAreaSpawn","path":"objects/oAreaSpawn/oAreaSpawn.yy",},},
     {"id":{"name":"oBombardeiro","path":"objects/oBombardeiro/oBombardeiro.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oCasa","path":"objects/oCasa/oCasa.yy",},},
