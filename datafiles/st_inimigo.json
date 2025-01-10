@@ -3,25 +3,25 @@
         {
             "funcao": "bombardeiro",
             "status": {
-                "vida": 10,
+                "vida": 5,
                 "dano": 2,
-                "velo": 2
+                "velo": 4
             }
         },
         {
             "funcao": "atirador",
             "status": {
                 "vida": 5,
-                "dano": 4,
-                "velo": 2
+                "dano": 2,
+                "velo": 1
             }
         },
         {
             "funcao": "magico",
             "status": {
-                "vida": 8,
-                "dano": 2,
-                "velo": 2
+                "vida": 3,
+                "dano": 4,
+                "velo": 1
             }
         }
     ],

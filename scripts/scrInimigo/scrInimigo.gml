@@ -1,6 +1,7 @@
 enum I_ESTADO{
 	PARADO,
-	ANDANDO
+	ANDANDO,
+	EXPLODIR
 }
 function atualiza_i_estado(){
 	switch(estado){
@@ -8,20 +9,30 @@ function atualiza_i_estado(){
 			estado_txt = "parado"
 			velh = 0
 			velv = 0
-			if(distance_to_object(oCasa) >= 500){
-				estado = I_ESTADO.ANDANDO;
-			}
+				if(distance_to_object(oCasa) >= 500){
+					estado = I_ESTADO.ANDANDO;
+				}
 		break;
 		case I_ESTADO.ANDANDO:
 			estado_txt = "andando"
-			if(distance_to_object(oCasa) <= 300){
-				estado = I_ESTADO.PARADO;
+			if(parar = true){
+				if(distance_to_object(oCasa) <= 300){
+					estado = I_ESTADO.PARADO;
+				}
+			}
+			if(distance_to_object(oCasa) = 0){
+				estado = I_ESTADO.EXPLODIR;
 			}
 			focox = oCasa.x
 			focoy = oCasa.y
 			var _dir = point_direction(x,y,focox,focoy)
 			velh = lengthdir_x(vel, _dir)
 			velv = lengthdir_y(vel, _dir)
+		break;
+		case I_ESTADO.EXPLODIR:
+			estado_txt = "explodir"
+			dano_casa()
+			instance_destroy(self)
 		break;
 	}
 }
@@ -58,7 +69,21 @@ function status_inimigo(tipo_inimigo, level){
 	        break;
 	    }
 	}
-	vel = (_inimigo_data.status.velo) * ( _mult_data.status_mult.velo);
+	if (_inimigo_data != noone) {
+		vida = _inimigo_data.status.vida;
+		dano = _inimigo_data.status.dano * _mult_data.status_mult.dano;
+		vel = _inimigo_data.status.velo * _mult_data.status_mult.velo;
+	} else {
+		show_error("Tipo de inimigo não encontrado no JSON.", true);
+}
 	#endregion
+}
+#endregion
+
+#region
+function dano_casa(){
+	if(distance_to_object(oCasa) = 0){
+		oCasa.vida -= dano
+	}
 }
 #endregion
