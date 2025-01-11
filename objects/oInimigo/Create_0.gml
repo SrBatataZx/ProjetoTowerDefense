@@ -5,5 +5,5 @@
 event_inherited();
 
 parar = true
-estado = I_ESTADO.PARADO;
-estado_txt = "parado";
+estado = I_ESTADO.ANDANDO;
+estado_txt = "andando";

@@ -1,5 +1,5 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
-
-vida = 100
-vida_max = 100;
+if(global.debug){
+	draw_text(x,y,"objeto camera existe")
+}

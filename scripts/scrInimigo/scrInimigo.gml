@@ -9,6 +9,7 @@ function atualiza_i_estado(){
 			estado_txt = "parado"
 			velh = 0
 			velv = 0
+			vel = 0
 				if(distance_to_object(oCasa) >= 500){
 					estado = I_ESTADO.ANDANDO;
 				}
@@ -38,45 +39,64 @@ function atualiza_i_estado(){
 }
 
 #region status do inimigo
-function status_inimigo(tipo_inimigo, level){
-//script para puxar o inimigo pelo nome, modo de inserir: crie um objeto do inimigo;
+function status_inimigo(tipo_inimigo, nivel){
+//script para puxar o dado do inimigo pelo nome, modo de inserir: crie um objeto do inimigo;
 //no evento create voce irá puxar status_inimigo()
 //após puxar voce irá alterar o nome dentro dos parenteses ("bombardeiro"), no meu arquivo json de status tenho
 //bombardeiro, atirador e mágico, qualquer outro que não existir no arquivo json irá dar problema.
+	// Buscar dados do inimigo
+	var _inimigo_data = get_inimigo_data(tipo_inimigo);
+	if (_inimigo_data == noone) return;
+	
+	// Buscar multiplicadores de nível
+	var _multiplicador_data = get_multiplicador_data(nivel);
+	if (_multiplicador_data == noone) return;
+	// Atualizar os status do inimigo com base no JSON
+	vida = _inimigo_data.status.vida;
+	dano = _inimigo_data.status.dano * _multiplicador_data.status_mult.dano;
+	vel = _inimigo_data.status.velo * _multiplicador_data.status_mult.velo;
+}
+
+function get_inimigo_data(tipo_inimigo){
 	var _json_string = file_text_open_read("st_inimigo.json")
 	var json_data = "";
 	while (!file_text_eof(_json_string)) {
 		json_data += file_text_readln(_json_string);
 	}
 	file_text_close(_json_string);
-	
-	#region dados do inimigo
 	var _inimigos = json_parse(json_data);
-	var _tipo_inimi = tipo_inimigo;
-	var _inimigo_data = noone;
+	if(_inimigos == undefined){
+		show_error("Erro ao carregar o JSON de inimigos", true);
+		return noone;
+	}
 	for (var i = 0; i < array_length(_inimigos.inimigos); i++) {
-	    if (_inimigos.inimigos[i].funcao == _tipo_inimi) {
-	        _inimigo_data = _inimigos.inimigos[i];
-	        break;
+	    if (_inimigos.inimigos[i].funcao == tipo_inimigo) {
+	        return _inimigos.inimigos[i];
 	    }
 	}
-	//var _multiplicadores = json_parse(json_data);
-	var _nivel_mult = level;
-	var _mult_data = noone;
-	for (var i = 0; i < array_length(_inimigos.multiplicadores); i++) {
-	    if (_inimigos.multiplicadores[i].nivel == _nivel_mult) {
-	        _mult_data = _inimigos.multiplicadores[i];
-	        break;
-	    }
-	}
-	if (_inimigo_data != noone) {
-		vida = _inimigo_data.status.vida;
-		dano = _inimigo_data.status.dano * _mult_data.status_mult.dano;
-		vel = _inimigo_data.status.velo * _mult_data.status_mult.velo;
-	} else {
-		show_error("Tipo de inimigo não encontrado no JSON.", true);
+	show_error("Inimigo não encontrado no JSON: " + tipo_inimigo, true);
+	return noone
 }
-	#endregion
+
+function get_multiplicador_data(nivel){
+	var _json_string = file_text_open_read("st_inimigo.json")
+	var json_data = "";
+	while (!file_text_eof(_json_string)) {
+		json_data += file_text_readln(_json_string);
+	}
+	file_text_close(_json_string);
+	var _multiplicadores = json_parse(json_data);
+	if(_multiplicadores == undefined){
+		show_error("Erro ao carregar o JSON de multiplicadores", true);
+		return noone;
+	}
+	for (var i = 0; i < array_length(_multiplicadores.multiplicadores); i++) {
+	    if (_multiplicadores.multiplicadores[i].nivel == nivel) {
+	        return _multiplicadores.multiplicadores[i];
+	    }
+	}
+	show_error("Nivel não encontrado no JSON: " + nivel, true);
+	return noone
 }
 #endregion
 
@@ -85,5 +105,7 @@ function dano_casa(){
 	if(distance_to_object(oCasa) = 0){
 		oCasa.vida -= dano
 	}
+	//travando a vida da casa em 0.
+	if(oCasa.vida < 0) oCasa.vida = 0
 }
 #endregion
