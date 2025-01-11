@@ -7,17 +7,24 @@ function check_keypresses() {
 		global.debug = !global.debug;
 		show_debug_info();
 	}
+	// Alternando pause
+	if(keyboard_check_pressed(ord("P"))){
+		global.pause = !global.pause;
+	}
+	if(keyboard_check_pressed(vk_escape)){
+		global.pause = !global.pause;
+	}
 	// Alterna o modo fullscreen
-	if(keyboard_check_pressed(vk_f5)){
+	if(keyboard_check_pressed(vk_f11)){
 		toggle_fullscreen();
 	}
 	// Finaliza o jogo
-	if(keyboard_check_pressed(vk_escape)){
-		game_end();
-	}
-	if(keyboard_check_pressed(ord("R"))){
-		game_restart()
-	}
+	//if(keyboard_check_pressed(vk_escape)){
+	//	game_end();
+	//}
+	//if(keyboard_check_pressed(ord("R"))){
+	//	game_restart()
+	//}
 }
 // Função para alternar o modo fullscreen
 function toggle_fullscreen() {
