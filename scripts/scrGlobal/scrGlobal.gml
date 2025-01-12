@@ -12,6 +12,7 @@ function check_keypresses() {
 		global.pause = !global.pause;
 	}
 	if(keyboard_check_pressed(vk_escape)){
+		menu_pause()
 		global.pause = !global.pause;
 	}
 	// Alterna o modo fullscreen

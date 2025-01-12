@@ -1,4 +1,4 @@
-/// @description Inserir descrição aqui
+/// @description obj pai de UI
 // Você pode escrever seu código neste editor
-//criar_ui()
 detecta_mouse()
+checar_mouse()
