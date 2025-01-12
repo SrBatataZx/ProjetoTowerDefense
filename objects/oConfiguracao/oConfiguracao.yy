@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"oReiniciar",
+  "%Name":"oConfiguracao",
   "eventList":[],
   "managed":true,
-  "name":"oReiniciar",
+  "name":"oConfiguracao",
   "overriddenProperties":[],
   "parent":{
     "name":"UI",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sReiniciar",
-    "path":"sprites/sReiniciar/sReiniciar.yy",
+    "name":"sConfiguracao",
+    "path":"sprites/sConfiguracao/sConfiguracao.yy",
   },
   "spriteMaskId":null,
   "visible":true,
