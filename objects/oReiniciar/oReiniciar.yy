@@ -10,8 +10,8 @@
     "path":"folders/Objects/UI.yy",
   },
   "parentObjectId":{
-    "name":"oUIall",
-    "path":"objects/oUIall/oUIall.yy",
+    "name":"oUIPAI",
+    "path":"objects/oUIPAI/oUIPAI.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

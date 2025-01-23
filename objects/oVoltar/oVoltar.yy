@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"oSair",
+  "%Name":"oVoltar",
   "eventList":[],
   "managed":true,
-  "name":"oSair",
+  "name":"oVoltar",
   "overriddenProperties":[],
   "parent":{
     "name":"UI",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sSair",
-    "path":"sprites/sSair/sSair.yy",
+    "name":"sVoltar",
+    "path":"sprites/sVoltar/sVoltar.yy",
   },
   "spriteMaskId":null,
   "visible":true,

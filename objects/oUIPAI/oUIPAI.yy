@@ -1,15 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"oGUI",
+  "%Name":"oUIPAI",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oGUI",
+  "name":"oUIPAI",
   "overriddenProperties":[],
   "parent":{
-    "name":"globais",
-    "path":"folders/Objects/UI/globais.yy",
+    "name":"pai",
+    "path":"folders/Objects/pai.yy",
   },
   "parentObjectId":null,
   "persistent":false,
