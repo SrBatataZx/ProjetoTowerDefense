@@ -18,6 +18,4 @@ keyboard_set_map(ord("D"),vk_right);
 
 //Verificando a existencia do objeto player para criar o objeto camera
 //ao inves de colocar o objeto camera direto na room, ele será criado com o player
-if(object_exists(oPlayer) /*&& !object_exists(oCamera)*/){
-	instance_create_layer(x,y,"global",oCamera)
-}
+criar_objeto(oPlayer,"global",oCamera)
