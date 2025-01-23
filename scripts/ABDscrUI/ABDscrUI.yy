@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ABDscrUI",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ABDscrUI",
+  "parent":{
+    "name":"abandonado",
+    "path":"folders/abandonado.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

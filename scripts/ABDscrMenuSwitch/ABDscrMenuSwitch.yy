@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ABDscrMenuSwitch",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ABDscrMenuSwitch",
+  "parent":{
+    "name":"abandonado",
+    "path":"folders/abandonado.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
