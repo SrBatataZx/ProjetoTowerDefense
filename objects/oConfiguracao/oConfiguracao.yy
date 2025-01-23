@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"oConfiguracao",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oConfiguracao",
   "overriddenProperties":[],
@@ -10,8 +12,8 @@
     "path":"folders/Objects/UI.yy",
   },
   "parentObjectId":{
-    "name":"oUIall",
-    "path":"objects/oUIall/oUIall.yy",
+    "name":"oUIPAI",
+    "path":"objects/oUIPAI/oUIPAI.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

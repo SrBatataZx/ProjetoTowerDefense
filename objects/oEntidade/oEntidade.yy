@@ -10,8 +10,8 @@
   "name":"oEntidade",
   "overriddenProperties":[],
   "parent":{
-    "name":"Animados",
-    "path":"folders/Objects/Animados.yy",
+    "name":"pai",
+    "path":"folders/Objects/pai.yy",
   },
   "parentObjectId":null,
   "persistent":false,

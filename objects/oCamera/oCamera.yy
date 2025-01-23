@@ -10,8 +10,8 @@
   "name":"oCamera",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"global",
+    "path":"folders/Objects/global.yy",
   },
   "parentObjectId":null,
   "persistent":false,
