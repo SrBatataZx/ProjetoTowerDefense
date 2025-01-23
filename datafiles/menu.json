@@ -1,0 +1,10 @@
+{
+    "menus": [{
+        "menuz": "inicio",
+        "objetos": {
+            "Inicio": "oIniciar",
+            "Configuracao": "oConfiguracao",
+            "Sair": "oSair"
+        }
+    }]
+}
