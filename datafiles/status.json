@@ -5,7 +5,8 @@
             "status": {
                 "vida": 5,
                 "dano": 2,
-                "velo": 4
+                "velo": 4,
+                "max_velo": 8
             }
         },
         {
@@ -48,6 +49,32 @@
                 "vida": 2,
                 "dano": 2,
                 "velo": 2
+            }
+        }
+    ],
+    "tiros":[
+        {
+            "tipo": "magico",
+            "status_tiro": {
+                "dano": 1,
+                "velo": 1
+            }
+        },
+        {
+            "tipo": "municao",
+            "status_tiro": {
+                "dano": 3,
+                "velo": 8
+            }
+        }
+    ],
+    "playerArmas":[
+        {
+            "tipo": "municao",
+            "status":{
+                "dano": 2,
+                "velo": 10,
+                "temp": 10
             }
         }
     ]
