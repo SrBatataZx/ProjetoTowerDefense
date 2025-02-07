@@ -1,5 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
-//atirar()
 
-alarm[0] = -1
+// Inherit the parent event
+event_inherited();
+
+debug("atirador")

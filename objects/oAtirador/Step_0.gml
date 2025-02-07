@@ -4,6 +4,5 @@
 // Inherit the parent event
 //event_inherited();
 if(!global.pause){
-	atualiza_i_estado(oAtirador);
+	InimigoStateMachine(oAtirador);
 }
-status_inimigo("atirador", "nivel_1")
