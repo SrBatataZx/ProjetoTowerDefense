@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrMouse",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"menu",
+    "path":"folders/Scripts/menu.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

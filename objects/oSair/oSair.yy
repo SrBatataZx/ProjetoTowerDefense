@@ -6,8 +6,8 @@
   "name":"oSair",
   "overriddenProperties":[],
   "parent":{
-    "name":"UI",
-    "path":"folders/Objects/UI.yy",
+    "name":"interagiveis",
+    "path":"folders/Objects/UI/Botoes/interagiveis.yy",
   },
   "parentObjectId":{
     "name":"oUIPAI",
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sSair",
-    "path":"sprites/sSair/sSair.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

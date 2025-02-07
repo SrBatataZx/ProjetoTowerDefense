@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrInimigoStateMachine",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrInimigoStateMachine",
+  "parent":{
+    "name":"inimigo",
+    "path":"folders/Scripts/inimigo.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

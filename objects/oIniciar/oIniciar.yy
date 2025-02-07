@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
   "%Name":"oIniciar",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"oIniciar",
   "overriddenProperties":[],
   "parent":{
-    "name":"UI",
-    "path":"folders/Objects/UI.yy",
+    "name":"interagiveis",
+    "path":"folders/Objects/UI/Botoes/interagiveis.yy",
   },
   "parentObjectId":{
     "name":"oUIPAI",
@@ -32,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sIniciar",
-    "path":"sprites/sIniciar/sIniciar.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
