@@ -1,21 +1,22 @@
-// Os recursos de script mudaram para a v2.3.0; veja
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 para obter mais informações
-function seleciona_room(_room_pick){
-	if(_room_pick == rJogo){
-		if(room == _room_pick){
-			check_keypresses();
-			if(global.pause == true){
-				criar_ui_menus(oMenuPause,0,0)
-			} else {
-				destruir_ui("ui")
-			}
-		}
+function seleciona_room(_room_pick) {
+	// Verifica se a sala atual é a mesma que a sala escolhida
+	if (room != _room_pick) {
+		return; // Sai da função se a sala não for a correta
 	}
-	if(_room_pick == rMenu){
-		if(room == _room_pick){
-			if(!instance_exists(oMenuInicio)){
-				criar_ui_menus(oMenuInicio,0,0)
+	// Verifica a sala escolhida e executa as ações correspondentes
+	switch (_room_pick) {
+		case rMenu:
+			criaMenu("Inicio"); // Cria o menu inicial
+		break;
+		//case rConfiguracao:
+		//	criaMenu("Configuracao"); // Cria o menu de configurações
+		//break;
+		case rJogo:
+			if (oCasa.vida > 0) {
+				check_keypresses(); // Verifica pressionamentos de tecla
+			} else if (oCasa.vida == 0) {
+				criaMenu("Morte"); // Cria o menu de morte
 			}
-		}
+		break;
 	}
 }
