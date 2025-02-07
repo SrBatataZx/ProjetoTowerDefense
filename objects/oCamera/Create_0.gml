@@ -39,7 +39,11 @@ segue_player = function(){
 		estado = segue_nada;
 	}
 	segue_alvo()
-	if (keyboard_check_released(vk_space)) estado = segue_casa;
+	if(oCasa.vida > 0){
+		if(global.pause = false){
+			if (keyboard_check_released(vk_space)) estado = segue_casa;
+		}
+	}
 }
 segue_casa = function(){
 	if(instance_exists(oCasa)){
@@ -48,7 +52,11 @@ segue_casa = function(){
 		estado = segue_nada;
 	}
 	segue_alvo()
-	if (keyboard_check_released(vk_space)) estado = segue_player;
+	if(oCasa.vida > 0){
+		if(global.pause = false){
+			if (keyboard_check_released(vk_space)) estado = segue_player;
+		}
+	}
 }
 segue_nada = function(){
 	alvo = noone;
