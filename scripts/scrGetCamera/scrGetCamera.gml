@@ -21,20 +21,8 @@ function dados_camera(){
 		"center_y": center_y
 	};
 }
-//função para criar objetos no meio da tela e em layer especifico
-function criar_ui_menus(objeto, _x, _y){
-	var _dados_camera = dados_camera();
-	var center_x = _dados_camera.center_x
-	var center_y = _dados_camera.center_y
-	if(!instance_exists(objeto)){
-		instance_create_layer(center_x + _x, center_y + _y, "ui", objeto);
-	}
-}
-function criar_objeto(_se_OBJ_ext, _layer ,_objeto){
-	if(object_exists(_se_OBJ_ext) /*&& !object_exists(oCamera)*/){
-		instance_create_layer(x,y,_layer,_objeto)
-	}
-}
-function destruir_ui(_UI){
-	instance_deactivate_layer(_UI)
-}
+//function criar_objeto(_se_OBJ_ext, _layer ,_objeto){
+//	if(object_exists(_se_OBJ_ext) /*&& !object_exists(oCamera)*/){
+//		instance_create_layer(x,y,_layer,_objeto)
+//	}
+//}
