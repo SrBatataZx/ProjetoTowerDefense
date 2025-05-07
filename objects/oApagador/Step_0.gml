@@ -3,4 +3,5 @@
 
 // Inherit the parent event
 event_inherited();
+disparo(oTiroGiz,sGiz)
 
