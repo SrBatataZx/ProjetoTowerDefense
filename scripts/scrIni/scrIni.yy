@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrCONFIGURACOES",
+  "%Name":"scrIni",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrCONFIGURACOES",
+  "name":"scrIni",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
