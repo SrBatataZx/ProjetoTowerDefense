@@ -1,6 +1,6 @@
 // Os recursos de script mudaram para a v2.3.0; veja
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 para obter mais informações
-function switchLanguage(_acao){
+function substituirLinguagem(_acao){
 	var languages = ["pt_br","en_us"]
 	var _currentIndex = array_get_index(languages, global.language)
 	switch(_acao){
@@ -22,8 +22,8 @@ function switchLanguage(_acao){
 	salvarConfig("linguagem", global.language)
 }
 
-
-function SwitchSprite(_sprPT,_sprEN){
+//funcão auxiliar para trocar corretamente as sprites durante a mudança de linguagem
+function substituirSprite(_sprPT,_sprEN){
 	var _sprite_index = [_sprPT, _sprEN];
 	sprite_index = _sprite_index[0];
 	switch(global.language){
@@ -48,7 +48,7 @@ function atualizaInterface(){
 
     for (var i = 0; i < array_length(_objetos); i++) {
         with (_objetos[i].obj) {
-            SwitchSprite(_objetos[i].sprPT, _objetos[i].sprEN);
+            substituirSprite(_objetos[i].sprPT, _objetos[i].sprEN);
         }
     }
 }
