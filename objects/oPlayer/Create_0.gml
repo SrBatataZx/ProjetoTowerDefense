@@ -11,7 +11,9 @@ energia_max = 100;
 energia_rec = .5;
 energia_cons = .3;
 
-timer_tiro = 0
+arma = noone
+
+//timer_tiro = 0;
 
 keyboard_set_map(ord("W"),vk_up);
 keyboard_set_map(ord("S"),vk_down);
