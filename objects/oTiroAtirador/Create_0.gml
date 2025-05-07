@@ -3,4 +3,5 @@
 //vel = VEL * 2
 velh = 0
 velv = 0
-statusInimigoArma("municao")
+statusInimigoArma("atirador")
+//statusInimigo("atirador","nivel_1")
