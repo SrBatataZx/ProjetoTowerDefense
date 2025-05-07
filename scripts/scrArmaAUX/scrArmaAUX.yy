@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrArmaAUX",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrArmaAUX",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
