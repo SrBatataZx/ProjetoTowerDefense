@@ -3,16 +3,15 @@ enum P_ESTADO{
 	ANDANDO,
 	CORRENDO,
 	CANSADO,
-	ATIRANDO
+	//ATIRANDO
 }
 #region atualiza o estado do player
-function PlaterStateMachine(){
+function playerStateMachine(){
 	var _up = keyboard_check(vk_up);
 	var _down = keyboard_check(vk_down);
 	var _left = keyboard_check(vk_left);
 	var _right = keyboard_check(vk_right);
 	var _shift = keyboard_check(vk_shift)
-	var _mb_left = mouse_check_button(mb_left)
 	
 	var _is_moving = (_up xor _down) || (_left xor _right);
 	
@@ -26,8 +25,7 @@ function PlaterStateMachine(){
 			if(_is_moving){
 				estado = P_ESTADO.ANDANDO;
 			}
-			restore_energy();
-			ManipulaDisparo(_mb_left);
+			restauraEnergia();
 		break;
 		case P_ESTADO.ANDANDO:
 			estado_txt = "andando"
@@ -38,12 +36,11 @@ function PlaterStateMachine(){
 				if (_shift){//caso apertar shift, irá acionar o estado correndo.
 					estado = P_ESTADO.CORRENDO;
 				}
-				//atualiza a velocidade(_vel) do player ativando a funcao s_atualiza_speed.
+				//atualiza a velocidade(_vel) do player ativando a funcao atualizaVelocidade.
 				vel = VEL;
-				s_atualiza_speed(_right - _left, _down - _up, vel);
+				atualizaVelocidade(_right - _left, _down - _up, vel);
 			}
-			restore_energy(0.25);
-			ManipulaDisparo(_mb_left);
+			restauraEnergia(0.25);
 		break;
 		case P_ESTADO.CORRENDO:
 			estado_txt = "correndo";
@@ -58,29 +55,20 @@ function PlaterStateMachine(){
 					estado = P_ESTADO.CANSADO;
 				}
 				energia -= energia_cons;
-				//atualiza a velocidade(_maxvel) do player ativando a funcao s_atualiza_speed.
+				//atualiza a velocidade(_maxvel) do player ativando a funcao atualizaVelocidade.
 				vel = maxvel;
-				s_atualiza_speed(_right - _left, _down - _up, vel);
+				atualizaVelocidade(_right - _left, _down - _up, vel);
 			}
-			ManipulaDisparo(_mb_left)
 		break;
 		case P_ESTADO.CANSADO:
 			estado_txt = "cansado"
 			//zerando as velocidades do player
 			velh = 0
 			velv = 0
-			restore_energy();
+			restauraEnergia();
 			if(energia >= 50){//ao restaurar 50 de energia, o player irá para o estado parado, onde
 				//esta livre para ir para qualquer outro estado.
 				estado = P_ESTADO.PARADO
-			}
-		break;
-		case P_ESTADO.ATIRANDO:
-			PlayerTiro();
-			if(_is_moving){
-				estado = _shift ? P_ESTADO.CORRENDO : P_ESTADO.ANDANDO;
-			} else {
-				estado = P_ESTADO.PARADO;
 			}
 		break;
 	}
