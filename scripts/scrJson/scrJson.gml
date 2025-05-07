@@ -1,6 +1,6 @@
 // Os recursos de script mudaram para a v2.3.0; veja
 //funcao para carregar o JSON apenas uma vez
-function load_json_data(){
+function loadJsonData(){
 	if(global.json_data == noone){
 		var _json_string = file_text_open_read("status.json");
 		var json_data = "";

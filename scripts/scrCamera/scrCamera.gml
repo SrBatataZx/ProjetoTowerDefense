@@ -1,6 +1,6 @@
 // Os recursos de script mudaram para a v2.3.0; veja
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 para obter mais informações
-function dados_camera(){
+function dadosCamera(){
 	var _cam = view_camera[0]
 	// Obter as coordenadas da câmera
 	var cam_x = camera_get_view_x(_cam);
@@ -21,8 +21,3 @@ function dados_camera(){
 		"center_y": center_y
 	};
 }
-//function criar_objeto(_se_OBJ_ext, _layer ,_objeto){
-//	if(object_exists(_se_OBJ_ext) /*&& !object_exists(oCamera)*/){
-//		instance_create_layer(x,y,_layer,_objeto)
-//	}
-//}

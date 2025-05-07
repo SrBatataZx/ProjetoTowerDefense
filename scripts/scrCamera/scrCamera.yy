@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrLOADjs",
+  "%Name":"scrCamera",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrLOADjs",
+  "name":"scrCamera",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
