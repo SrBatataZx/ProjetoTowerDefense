@@ -2,3 +2,4 @@
 // Você pode escrever seu código neste editor
 draw_self()
 draw_text(x,y,vida)
+debug("estrutura")
