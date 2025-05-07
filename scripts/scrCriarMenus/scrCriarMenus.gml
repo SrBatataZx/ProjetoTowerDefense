@@ -1,15 +1,16 @@
-function DestroyObjeto(_obj){
+function destroyObjeto(_obj){
 	instance_destroy(_obj)
 }
-function DesativaLayer(_ui){
+function desativaLayer(_ui){
 	instance_deactivate_layer(_ui)
 }
-function AtivaLayer(_ui){
-	instance_activate_layer(_ui)
-}
+//function AtivaLayer(_ui){
+//	instance_activate_layer(_ui)
+//}
+
 //funcao auxiliar para criar todos os objetos de uma vez no objeto central
 //por exemplo criamos um objeto obj_configuracao e no evento create inserimoss o criaMenu("Configuracao"),
-//parra assim chamar o script responsável pelos objetos que irá ter no menu.
+//para assim chamar o script responsável pelos objetos que irá ter no menu.
 function criaMenu(menu){
 	switch(menu){
 		case "Inicio":
@@ -30,40 +31,39 @@ function criaMenu(menu){
 	}
 }
 #region funções auxiliares para matar / destruir os objetos dos respectivos menus
-function MataMenu(menu){
+function mataMenu(menu){
 	switch(menu){
 		case "Inicio":
-			MataObjetosMenuIniciar();
+			mataObjetosMenuIniciar();
 		break;
 		case "Configuracao":
-			MataObjetosMenuConfiguracao();
+			mataObjetosMenuConfiguracao();
 		break;
 	}
 }
-function MataObjetosMenuIniciar(){
-	DestroyObjeto(oIniciar)
-	DestroyObjeto(oSair)	
-	DestroyObjeto(oAjustes)
+function mataObjetosMenuIniciar(){
+	destroyObjeto(oIniciar)
+	destroyObjeto(oSair)	
+	destroyObjeto(oAjustes)
 }
-function MataObjetosMenuConfiguracao(){
-	DestroyObjeto(oVoltar)
-	DestroyObjeto(oMenos)
-	DestroyObjeto(oRecuar)
-	DestroyObjeto(oSFX)
-	DestroyObjeto(oLinguagem)
-	DestroyObjeto(oFullscreen)
-	DestroyObjeto(oMais)
-	DestroyObjeto(oAvancar)
-	DestroyObjeto(oBotao)
+function mataObjetosMenuConfiguracao(){
+	destroyObjeto(oVoltar)
+	destroyObjeto(oMenos)
+	destroyObjeto(oRecuar)
+	destroyObjeto(oSFX)
+	destroyObjeto(oLinguagem)
+	destroyObjeto(oFullscreen)
+	destroyObjeto(oMais)
+	destroyObjeto(oAvancar)
+	destroyObjeto(oBotao)
 }
-
 
 #region funções auxiliares para a criação dos objetos de menu, podendo ajustar o x e o y de cada objeto
 // Os recursos de script mudaram para a v2.3.0; veja
 function criaObjetosCentralizado(objeto, _x, _y){
-    var _dados_camera = dados_camera();
-    var center_x = _dados_camera.center_x;
-    var center_y = _dados_camera.center_y;
+    var _dadosCamera = dadosCamera();
+    var center_x = _dadosCamera.center_x;
+    var center_y = _dadosCamera.center_y;
     // Verifica se já existe uma instância do objeto
     if (!instance_exists(objeto)) {
         // Cria a instância na camada "ui"

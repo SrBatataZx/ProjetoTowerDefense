@@ -2,7 +2,7 @@
 // Você pode escrever seu código neste editor
 velh = 0
 velv = 0
-vel = 0
+velocidade = 0
 maxvel = MAXVEL
 
 
