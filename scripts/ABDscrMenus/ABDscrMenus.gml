@@ -13,9 +13,9 @@
 //	criar_ui_menus(oSair,0,100,"pause_morte");
 //}
 //function criar_ui_menus(objeto, _x, _y, _layer){
-//	var _dados_camera = dados_camera();
-//	var center_x = _dados_camera.center_x
-//	var center_y = _dados_camera.center_y
+//	var _dadosCamera = dadosCamera();
+//	var center_x = _dadosCamera.center_x
+//	var center_y = _dadosCamera.center_y
 //	if(layer_exists(_layer)){
 //		if(!instance_exists(objeto)){
 //			instance_create_layer(center_x + _x, center_y + _y, _layer, objeto);
