@@ -4,4 +4,4 @@
 // Inherit the parent event
 event_inherited();
 parar = false
-statusInimigo("bombardeiro","nivel_1")
+statusInimigo("bombardeiro")

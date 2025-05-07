@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 //puxando status do inimigo, escolho qual inimigo e qual o nivel dele
-statusInimigo("atirador","nivel_1")
+statusInimigo("atirador")
 
 #region mexendo com o timer do tiro
 //Inicializa o contador de tempo para os tiros

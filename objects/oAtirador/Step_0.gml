@@ -4,5 +4,5 @@
 // Inherit the parent event
 //event_inherited();
 if(!global.pause){
-	InimigoStateMachine(oAtirador);
+	inimigoStateMachine(oAtirador);
 }
