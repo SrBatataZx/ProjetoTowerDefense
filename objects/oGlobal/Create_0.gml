@@ -18,4 +18,16 @@ global.language = carregarConfig("linguagem", "pt_br")
 //global para verificar se mb_left foi pressionado utilizado em checa_click()
 global.click_processed = false;
 
-seleciona_room(rMenu)
+selecionaRoom(rMenu)
+//rooms = [rJogo,rMapa1]
+
+#macro DISCORD_APP_ID "1257094632232194118"
+
+ready = false;
+
+alarm[0] = game_get_speed(gamespeed_fps) * 5;
+
+if (!np_initdiscord(DISCORD_APP_ID, true, np_steam_app_id_empty))
+{
+	show_error("NekoPresence init fail.", true);
+}
