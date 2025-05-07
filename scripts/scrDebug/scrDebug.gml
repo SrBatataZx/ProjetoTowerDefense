@@ -1,4 +1,4 @@
-function chama_debug(qual,estado){
+function chamaDebug(qual,estado){
 	var mensagem = "";
 	switch(qual){
 		case "Pause":
@@ -54,7 +54,7 @@ function debug(_debug){
 				draw_set_valign(1)
 				draw_set_halign(1)
 				draw_text(x, y - sprite_height, estado_txt)
-				draw_text(x - 30,y,vel)
+				draw_text(x - 30,y,velocidade)
 				draw_text(x, y + 25, "x: " + string(velh))
 				draw_text(x, y + 35, "y: " + string(velv))
 				draw_text(x + 50,y,distance_to_object(oCasa))
@@ -67,8 +67,10 @@ function debug(_debug){
 				draw_set_valign(1)
 				draw_set_halign(1)
 				draw_text(x, y + 45, "Energia: " + string(energia) + " / " + string(energia_max));
+				draw_text(x,y + 65, string(arma));
 				draw_set_valign(-1)
 				draw_set_halign(-1)
+				
 			}
 		break;
 		case "inimigo":
@@ -79,6 +81,18 @@ function debug(_debug){
 				var _circle_2 = draw_circle_color(x,y,500,c_green,c_green, true)
 				var _circle_3 = draw_circle_color(x,y,200,c_red,c_red, true)
 				draw_text(x - 60,y + 15, "Vida: " + string(self.vida))
+				draw_set_valign(-1)
+				draw_set_halign(-1)
+			}
+		break;
+		case "estrutura":
+			if(global.debug){
+				draw_set_valign(1)
+				draw_set_halign(1)
+				var _circle_1 = draw_circle_color(x,y,850,c_blue,c_blue, true)
+				var _circle_2 = draw_circle_color(x,y,500,c_green,c_green, true)
+				var _circle_3 = draw_circle_color(x,y,200,c_red,c_red, true)
+				//draw_text(x - 60,y + 15, "Vida: " + string(self.vida))
 				draw_set_valign(-1)
 				draw_set_halign(-1)
 			}
