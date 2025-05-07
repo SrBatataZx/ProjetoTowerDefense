@@ -1,81 +1,91 @@
 {
+    "_comentarios":{
+        "classes_inimigos": ["atirador, mago,"],
+        "classes_armas": ["atirador, magico, explosivo"]
+    },
+    "playerStatus":{
+        "status": {
+            "velocidade": 4.0,
+            "velocidade_max": 8.0
+        }
+    },
     "inimigos":[
         {
-            "funcao": "bombardeiro",
+            "inimigo": "bombardeiro",
             "status": {
-                "vida": 5,
-                "dano": 2,
-                "velo": 4,
-                "max_velo": 8
+                "vida": 5.0,
+                "velocidade": 4.0,
+                "velocidade_max": 8.0,
+                "ataque":{
+                    "tipo": "explosivo",
+                    "dano": 2.0
+                }
+            },
+            "status_por_nivel": {
+                "nivel_1": { "vida": 1.0, "dano": 1.0, "velocidade": 1.0 },
+                "nivel_2": { "vida": 1.5, "dano": 1.5, "velocidade": 1.5 },
+                "nivel_3": { "vida": 2.0, "dano": 2.0, "velocidade": 2.0 }
             }
         },
         {
-            "funcao": "atirador",
+            "inimigo": "atirador",
             "status": {
-                "vida": 5,
-                "dano": 2,
-                "velo": 2
+                "vida": 5.0,
+                "velocidade": 2.0,
+                "ataque":{
+                    "tipo": "tiro",
+                    "dano": 2.0,
+                    "velocidade": 8.0
+                }
+            },
+            "status_por_nivel": {
+                "nivel_1": { "vida": 1.0, "dano": 1.0, "velocidade": 1.0 },
+                "nivel_2": { "vida": 1.5, "dano": 1.5, "velocidade": 1.5 },
+                "nivel_3": { "vida": 2.0, "dano": 2.0, "velocidade": 2.0 }
             }
         },
         {
-            "funcao": "magico",
+            "inimigo": "mago",
             "status": {
-                "vida": 3,
-                "dano": 4,
-                "velo": 1
-            }
-        }
-    ],
-    "multiplicadores":[
-        {
-            "nivel": "nivel_1",
-            "status_mult": {
-                "vida": 1,
-                "dano": 1,
-                "velo": 1
-            }
-        },
-        {
-            "nivel": "nivel_2",
-            "status_mult": {
-                "vida": 1.5,
-                "dano": 1.5,
-                "velo": 1.5
-            }
-        },
-        {
-            "nivel": "nivel_3",
-            "status_mult": {
-                "vida": 2,
-                "dano": 2,
-                "velo": 2
-            }
-        }
-    ],
-    "tiros":[
-        {
-            "tipo": "magico",
-            "status_tiro": {
-                "dano": 1,
-                "velo": 1
-            }
-        },
-        {
-            "tipo": "municao",
-            "status_tiro": {
-                "dano": 3,
-                "velo": 8
+                "vida": 5.0,
+                "velocidade": 2.0,
+                "ataque":{
+                    "tipo": "magico",
+                    "dano": 2.0,
+                    "velocidade": 8.0
+                }
+            },
+            "status_por_nivel": {
+                "nivel_1": { "vida": 1.0, "dano": 1.0, "velocidade": 1.0 },
+                "nivel_2": { "vida": 1.5, "dano": 1.5, "velocidade": 1.5 },
+                "nivel_3": { "vida": 2.0, "dano": 2.0, "velocidade": 2.0 }
             }
         }
     ],
     "playerArmas":[
         {
-            "tipo": "municao",
-            "status":{
-                "dano": 2,
-                "velo": 10,
-                "temp": 10
-            }
+            "arma": "kitmedico",
+            "sprite": "sKitMedico",
+            "projetilSprite": "sSeringa",
+            "status": { "dano": 2.0, "velocidade": 20, "tempo_recarga": 10, "precisao": 1.0 }
+        },
+        {
+            "arma": "balacanhao",
+            "sprite": null,
+            "projetilSprite": null,
+            "status": { "dano": 5.0, "velocidade": 1, "tempo_recarga": 120, "precisao": 1.0 }
+        },
+        {
+            "arma": "caderno",
+            "sprite": "sCaderno",
+            "projetilSprite": "sFolha",
+            "status": { "dano": 2.0, "velocidade": 5, "tempo_recarga": 10, "precisao": 1.0 }
+        },
+        {
+            "arma": "apagador",
+            "sprite": "sApagador",
+            "projetilSprite": "sGiz",
+            "status": { "dano": 1.0, "velocidade": 50, "tempo_recarga": 10, "precisao": 1.0 }
         }
     ]
 }
