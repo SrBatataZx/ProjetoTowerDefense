@@ -39,20 +39,20 @@ segue_player = function(){
 		estado = segue_nada;
 	}
 	segue_alvo()
-	if(oCasa.vida > 0){
+	if(oEstrutura.vida > 0){
 		if(global.pause = false){
 			if (keyboard_check_released(vk_space)) estado = segue_casa;
 		}
 	}
 }
 segue_casa = function(){
-	if(instance_exists(oCasa)){
-		alvo = oCasa;
+	if(instance_exists(oEstrutura)){
+		alvo = oEstrutura;
 	} else {
 		estado = segue_nada;
 	}
 	segue_alvo()
-	if(oCasa.vida > 0){
+	if(oEstrutura.vida > 0){
 		if(global.pause = false){
 			if (keyboard_check_released(vk_space)) estado = segue_player;
 		}

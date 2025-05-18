@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scsrPlayerAUX",
+  "%Name":"sGETStatusEstrutura",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scsrPlayerAUX",
+  "name":"sGETStatusEstrutura",
   "parent":{
-    "name":"player",
-    "path":"folders/Scripts/player.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

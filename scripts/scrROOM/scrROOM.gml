@@ -6,16 +6,15 @@ function selecionaRoom(_room_pick) {
 	// Verifica a sala escolhida e executa as ações correspondentes
 	switch (_room_pick) {
 		case rMenu:
-			criaMenu("Inicio"); // Cria o menu inicial
+			menu("criaMenu","Inicio"); // Cria o menu inicial
 		break;
-		//case rConfiguracao:
-		//	criaMenu("Configuracao"); // Cria o menu de configurações
-		//break;
 		case rJogo:
-			if (oCasa.vida > 0) {
+			if (oEstrutura.vida > 0) {
 				checaTeclaPressionada(); // Verifica pressionamentos de tecla
-			} else if (oCasa.vida == 0) {
-				criaMenu("Morte"); // Cria o menu de morte
+				global.morteMenu = false;
+			} else if (oEstrutura.vida == 0 && !global.morteMenu) {
+				menu("criaMenu","Morte"); // Cria o menu de morte
+				global.morteMenu = true;
 			}
 		break;
 	}
