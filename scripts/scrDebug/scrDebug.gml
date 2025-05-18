@@ -30,7 +30,6 @@ function debug(_debug){
 				} else {
 					draw_text(x,y, "objeto global nao existe")
 				}
-				draw_text(x,y,"objeto global existe")
 				if(global.pause){
 					draw_text(x,y + 20,"pausado")
 				} else {
@@ -40,9 +39,11 @@ function debug(_debug){
 				draw_text(x, y + 80, "FullScreen: " + string(global.fullscreen))
 				draw_text(x,y + 100, game_get_speed(gamespeed_fps))
 			}
-			if(instance_exists(oGlobal)){
-				draw_text(x,y,"objeto global existe")
-			}
+			//if(instance_exists(oGlobal)){
+			//	draw_text(x,y, "objeto global existe")
+			//} else {
+			//	draw_text(x,y, "objeto global nao existe")
+			//}
 		break;
 		case "camera":
 			if(global.debug){
@@ -57,7 +58,7 @@ function debug(_debug){
 				draw_text(x - 30,y,velocidade)
 				draw_text(x, y + 25, "x: " + string(velh))
 				draw_text(x, y + 35, "y: " + string(velv))
-				draw_text(x + 50,y,distance_to_object(oCasa))
+				draw_text(x + 50,y,distance_to_object(oEstrutura))
 				draw_set_valign(-1)
 				draw_set_halign(-1)
 			}
@@ -66,8 +67,11 @@ function debug(_debug){
 			if (global.debug){
 				draw_set_valign(1)
 				draw_set_halign(1)
-				draw_text(x, y + 45, "Energia: " + string(energia) + " / " + string(energia_max));
+				draw_circle(x,y,dropsAtracao,true)
+				//draw_text(x, y + 45, "Energia: " + string(energia) + " / " + string(energiaMax));
 				draw_text(x,y + 65, string(arma));
+				//draw_text(x,y + 85, "Inimigos mortos: " + string(inimigosMortos));
+				//draw_text(x,y + 105, "Moedas: " + string(moedas));
 				draw_set_valign(-1)
 				draw_set_halign(-1)
 				
@@ -91,7 +95,8 @@ function debug(_debug){
 				draw_set_halign(1)
 				var _circle_1 = draw_circle_color(x,y,850,c_blue,c_blue, true)
 				var _circle_2 = draw_circle_color(x,y,500,c_green,c_green, true)
-				var _circle_3 = draw_circle_color(x,y,200,c_red,c_red, true)
+				var _circle_3 = draw_circle_color(x,y,350,c_orange,c_orange, true)
+				var _circle_4 = draw_circle_color(x,y,200,c_red,c_red, true)
 				//draw_text(x - 60,y + 15, "Vida: " + string(self.vida))
 				draw_set_valign(-1)
 				draw_set_halign(-1)
