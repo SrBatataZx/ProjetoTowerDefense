@@ -1,20 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"oBombardeiro",
+  "%Name":"oEstrutura",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oBombardeiro",
+  "name":"oEstrutura",
   "overriddenProperties":[],
   "parent":{
-    "name":"Inimigos",
-    "path":"folders/Objects/Animados/Inimigo/Inimigos.yy",
+    "name":"global",
+    "path":"folders/Objects/global.yy",
   },
-  "parentObjectId":{
-    "name":"oInimigoPai",
-    "path":"objects/oInimigoPai/oInimigoPai.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sBombardeiro",
-    "path":"sprites/sBombardeiro/sBombardeiro.yy",
+    "name":"sCasa",
+    "path":"sprites/sCasa/sCasa.yy",
   },
   "spriteMaskId":null,
   "visible":true,

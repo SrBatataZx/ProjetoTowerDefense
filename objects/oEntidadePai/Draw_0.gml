@@ -1,7 +1,5 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
+draw_self()
 
-// Inherit the parent event
-event_inherited();
-parar = false
-statusInimigo("bombardeiro")
+debug("entidade")

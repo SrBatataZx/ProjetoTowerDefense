@@ -2,7 +2,6 @@
   "$GMObject":"",
   "%Name":"oAtirador",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
@@ -10,12 +9,12 @@
   "name":"oAtirador",
   "overriddenProperties":[],
   "parent":{
-    "name":"inimigos",
-    "path":"folders/Objects/Animados/inimigos.yy",
+    "name":"Inimigos",
+    "path":"folders/Objects/Animados/Inimigo/Inimigos.yy",
   },
   "parentObjectId":{
-    "name":"oInimigo",
-    "path":"objects/oInimigo/oInimigo.yy",
+    "name":"oInimigoPai",
+    "path":"objects/oInimigoPai/oInimigoPai.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
