@@ -37,7 +37,7 @@ function playerStateMachine(){
 					estado = P_ESTADO.CORRENDO;
 				}
 				//atualiza a velocidade(_vel) do player ativando a funcao atualizaVelocidade.
-				vel = VEL;
+				vel = velocidade;
 				atualizaVelocidade(_right - _left, _down - _up, vel);
 			}
 			restauraEnergia(0.25);
@@ -54,9 +54,9 @@ function playerStateMachine(){
 				if(energia == 0){//caso a energia se esgote, irá acionar o estado de cansado.
 					estado = P_ESTADO.CANSADO;
 				}
-				energia -= energia_cons;
+				energia -= energiaCons;
 				//atualiza a velocidade(_maxvel) do player ativando a funcao atualizaVelocidade.
-				vel = maxvel;
+				vel = velocidadeMax;
 				atualizaVelocidade(_right - _left, _down - _up, vel);
 			}
 		break;
