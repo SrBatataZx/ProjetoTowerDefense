@@ -5,22 +5,24 @@ enum I_ESTADO{
 	EXPLODIR,
 	ATIRAR
 }
-function inimigoStateMachine(_inimigo){
-	if(!instance_exists(oCasa)) return;
-	focox = oCasa.x
-	focoy = oCasa.y
+function inimigoStateMachine(){
+	if(!instance_exists(oEstrutura)) return;
+	focox = oEstrutura.x
+	focoy = oEstrutura.y
 	var _dir = point_direction(x,y,focox,focoy)
-	var _distancia = distance_to_object(oCasa)
+	var _distancia = distance_to_object(oEstrutura)
+	
+	var _inimigo = [oAtirador,oMago]
 	switch(estado){
 		case I_ESTADO.PARADO:
 			estado_txt = "parado"
 			velh = 0
 			velv = 0
 			velocidade = 0
-				if(_distancia >= 500){
+				if(array_tem(_inimigo, object_index) >= 500){
 					estado = I_ESTADO.ANDANDO;
 				}
-				if((_inimigo == oAtirador) && (_distancia <= 400)){
+				if(array_tem(_inimigo, object_index) && (_distancia <= 250)){
 					estado = I_ESTADO.ATIRAR;
 				}
 		break;
@@ -29,22 +31,19 @@ function inimigoStateMachine(_inimigo){
 			velh = lengthdir_x(velocidade, _dir)
 			velv = lengthdir_y(velocidade, _dir)
 			if(parar == true){
-				if((_inimigo == oAtirador) && (_distancia <= 400)){
+				if(array_tem(_inimigo, object_index) && (_distancia <= 250)){
 					estado = I_ESTADO.PARADO;
 				}
-				if(_distancia <= 300){
-					estado = I_ESTADO.PARADO;
-				}
-			} else if((_inimigo == oBombardeiro) && (_distancia < 200)){
+			} else if((object_index == oBombardeiro) && (_distancia < 200)){
 				estado = I_ESTADO.CORRENDO;
 			}
 		break;
 		case I_ESTADO.CORRENDO:
 		estado_txt = "correndo"
-			velocidade = velocidade_max
+			velocidade = velocidadeMax
 			velh = lengthdir_x(velocidade, _dir)
 			velv = lengthdir_y(velocidade, _dir)
-			if((_inimigo == oBombardeiro) && (_distancia == 0)){
+			if((object_index == oBombardeiro) && (_distancia == 0)){
 				estado = I_ESTADO.EXPLODIR;
 			}
 		break;
@@ -57,4 +56,13 @@ function inimigoStateMachine(_inimigo){
 			atiraInimigo()
 		break;
 	}
+}
+
+
+//teste
+function array_tem(_array, _valor) {
+	for (var i = 0; i < array_length(_array); i++) {
+		if (_array[i] == _valor) return true;
+	}
+	return false;
 }
