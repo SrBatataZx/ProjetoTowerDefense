@@ -1,16 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"oCasa",
+  "%Name":"oProjetilPai",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oCasa",
+  "name":"oProjetilPai",
   "overriddenProperties":[],
   "parent":{
-    "name":"global",
-    "path":"folders/Objects/global.yy",
+    "name":"OBJpai",
+    "path":"folders/Objects/Animados/Inimigo/OBJpai.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sCasa",
-    "path":"sprites/sCasa/sCasa.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

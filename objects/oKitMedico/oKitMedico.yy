@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Armas",
-    "path":"folders/Objects/Armas.yy",
+    "path":"folders/Objects/Animados/Player/Armas.yy",
   },
   "parentObjectId":{
     "name":"oArmaPai",

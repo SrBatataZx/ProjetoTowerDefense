@@ -8,8 +8,8 @@
   "name":"oTiroPai",
   "overriddenProperties":[],
   "parent":{
-    "name":"pai",
-    "path":"folders/Objects/pai.yy",
+    "name":"OBJpai",
+    "path":"folders/Objects/Animados/Player/OBJpai.yy",
   },
   "parentObjectId":null,
   "persistent":false,

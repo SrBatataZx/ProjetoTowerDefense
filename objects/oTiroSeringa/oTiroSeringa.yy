@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Projetil",
-    "path":"folders/Objects/Armas/Projetil.yy",
+    "path":"folders/Objects/Animados/Player/Armas/Projetil.yy",
   },
   "parentObjectId":{
     "name":"oTiroPai",

@@ -1,17 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oRecuar",
-  "eventList":[],
+  "%Name":"oProjetilAtirador",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oRecuar",
+  "name":"oProjetilAtirador",
   "overriddenProperties":[],
   "parent":{
-    "name":"interagiveis",
-    "path":"folders/Objects/UI/Botoes/interagiveis.yy",
+    "name":"Projeteis",
+    "path":"folders/Objects/Animados/Inimigo/Projeteis.yy",
   },
   "parentObjectId":{
-    "name":"oUIPAI",
-    "path":"objects/oUIPAI/oUIPAI.yy",
+    "name":"oProjetilPai",
+    "path":"objects/oProjetilPai/oProjetilPai.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -31,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sRecuar",
-    "path":"sprites/sRecuar/sRecuar.yy",
+    "name":"sTiro",
+    "path":"sprites/sTiro/sTiro.yy",
   },
   "spriteMaskId":null,
   "visible":true,

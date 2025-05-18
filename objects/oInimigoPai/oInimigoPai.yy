@@ -1,19 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"oEntidade",
+  "%Name":"oInimigoPai",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oEntidade",
+  "name":"oInimigoPai",
   "overriddenProperties":[],
   "parent":{
-    "name":"pai",
-    "path":"folders/Objects/pai.yy",
+    "name":"OBJpai",
+    "path":"folders/Objects/Animados/Inimigo/OBJpai.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oEntidadePai",
+    "path":"objects/oEntidadePai/oEntidadePai.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,7 +34,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sInimigo",
+    "path":"sprites/sInimigo/sInimigo.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
