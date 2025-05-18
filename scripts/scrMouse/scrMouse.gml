@@ -3,49 +3,67 @@
 
 //função geral para checar a colisão do mouse e afins
 //essa funçao será a função pai para tudo que envolver o mouse
-function checarMouse(som){
-	mouseColisao(som);
-	mouseAlterImage();
+function checarMouse(_som){
+	mouseColisao(_som);
 	checaBotaoObjeto();
+	mouseAlterImage();
 }
 //função responsável por alterar alguma informação da imagem, como sua angulação.
-function mouseAlterImage(){
-	if(position_meeting(mouse_x,mouse_y,self.id)){
-		image_index = 1
-		image_angle = 4
-		image_alpha = 1
+function mouseAlterImage() {
+	var _mouseOn = position_meeting(mouse_x, mouse_y, self.id);
+
+	if (_mouseOn) {
+		image_index = 1;
+
+		if (object_index != oBotao) {
+			image_angle = 4;
+			image_alpha = 1;
+		}
 	} else {
-		image_index = 0
-		image_angle = 0
-		image_alpha = 1
+		image_index = 0;
+
+		if (object_index != oBotao) {
+			image_angle = 0;
+			image_alpha = 1;
+		}
 	}
 }
 
 //função para verificar se o mouse está sobre um objeto e tocar o som respectivo
 function mouseColisao(_som){
-	// Verifique se o mouse está sobre o objeto
-	if (position_meeting(mouse_x,mouse_y,self.id)){
-		// Verifique se é a primeira vez que o mouse entrou
-		if (!mouse_entered){
-			// Marcar que o mouse entrou no objeto
-			mouse_entered = true;
-			// Tocar o som
-			audio_play_sound(_som, 1, false,global.sfx);
-		}
-	} else {
-		// Se o mouse saiu, marque como false
-		mouse_entered = false;
-	}
+    if (position_meeting(mouse_x, mouse_y, self.id)) {
+        if (!mouse_entered) {
+            mouse_entered = true;
+            som_id = audio_play_sound(_som, 1, false, global.sfx);
+        }
+    } else {
+        if (mouse_entered) {
+            if (audio_is_playing(som_id)) {
+                audio_stop_sound(som_id);
+            }
+            mouse_entered = false;
+        }
+    }
 }
 
 //função auxiliar para verificar cliques em objetos, chamar a função no checaBotaoObjeto
-function verificaClick(_objetos){ 
+function verificaClick(_objetos) {
 	if (array_length(_objetos) == 0) return;
-	for (var i = 0; i < array_length(_objetos); i++){
-		if(position_meeting(mouse_x,mouse_y, _objetos[i].obj)){
-			show_debug_message("Objeto clicado: " + object_get_name(_objetos[i].obj))
-			_objetos[i].action(); // Executa a função associada ao objeto
-			break // Sai do loop após encontrar a ação correspondente
+
+	for (var i = 0; i < array_length(_objetos); i++) {
+		if (position_meeting(mouse_x, mouse_y, _objetos[i].obj)) {
+			var inst = instance_position(mouse_x, mouse_y, _objetos[i].obj);
+			if (inst != noone) {
+				var debug_msg = "Objeto clicado: " + object_get_name(_objetos[i].obj);
+
+				if (variable_instance_exists(inst, "botaoFuncao")) {
+					debug_msg += " (Função: " + string(inst.botaoFuncao) + ")";
+				}
+
+				show_debug_message(debug_msg);
+				_objetos[i].action(inst);
+			}
+			break;
 		}
 	}
 }
@@ -63,27 +81,51 @@ function checaBotaoObjeto(){
 					{obj: oIniciar, action: function() { room_goto(rJogo); } },
 					{obj: oSair, action: function() { game_end(); } },
 					/*room_goto(rConfiguracao)*/
-					{obj: oAjustes, action: function() { mataMenu("Inicio"); criaMenu("Configuracao"); } },
-					
-					{obj: oVoltar, action: function() { mataMenu("Configuracao"); criaMenu("Inicio"); } },
+					{obj: oAjustes, action: function() { menu("mataMenu","Inicio"); menu("criaMenu","Configuracao"); } },
+					{obj: oVoltar, action: function() { menu("mataMenu","Configuracao"); menu("criaMenu","Inicio"); } },
 					{obj: oMenos, action: function() { globalAudio("sfx","Diminuir"); } },
 					{obj: oMais, action: function() { globalAudio("sfx","Aumentar"); } },
-					{obj: oAvancar, action: function() { substituirLinguagem("Avancar"); } },
-					{obj: oRecuar, action: function() { substituirLinguagem("Voltar"); } },
-					{obj: oBotao, action: function() { changeFullscreen(); } }
+					{obj: oAvancar, action: function(inst) {
+						switch (inst.botaoFuncao) {
+							case "recuar": substituirLinguagem("Avancar"); break;
+							case "avancar": substituirLinguagem("Voltar"); break;
+							default: show_debug_message("Função desconhecida: " + string(inst.botaoFuncao));
+							}
+						} 
+					},
+					{obj: oBotao, action: function(inst) {
+						switch (inst.botaoFuncao) {
+							case "fullscreen": changeFullscreen(); break;
+							case "acessibilidade": changeAcessibilidade(); break;
+							default: show_debug_message("Função desconhecida: " + string(inst.botaoFuncao));
+							}
+						} 
+					}
 				];
 			break;
 			case rJogo:
 				_objetos = [
-					{obj: oVoltar, action: function() { desativaLayer("ui"); global.pause = false; global.PauseMenu = false} },
-					{obj: oReiniciar, action: function() { room_restart(); global.pause = false; global.PauseMenu = false } },
+					{obj: oVoltar, action: function() { desativaLayer("ui"); global.pause = false; global.pauseMenu = false} },
+					{obj: oReiniciar, action: function() { room_restart(); global.pause = false; global.pauseMenu = false } },
 					{obj: oSair, action: function() { game_end(); } },
 					{obj: oMenos, action: function() { globalAudio("sfx","Diminuir"); } },
 					{obj: oMais, action: function() { globalAudio("sfx","Aumentar"); } },
-					{obj: oAvancar, action: function() { substituirLinguagem("Avancar"); } },
-					{obj: oRecuar, action: function() { substituirLinguagem("Voltar"); } },
-					{obj: oBotao, action: function() { changeFullscreen(); } }
-					
+					{obj: oAvancar, action: function(inst) {
+						switch (inst.botaoFuncao) {
+							case "recuar": substituirLinguagem("Avancar"); break;
+							case "avancar": substituirLinguagem("Voltar"); break;
+							default: show_debug_message("Função desconhecida: " + string(inst.botaoFuncao));
+							}
+						} 
+					},
+					{obj: oBotao, action: function(inst) {
+						switch (inst.botaoFuncao) {
+							case "fullscreen": changeFullscreen(); break;
+							case "acessibilidade": changeAcessibilidade(); break;
+							default: show_debug_message("Função desconhecida: " + string(inst.botaoFuncao));
+							}
+						}
+					}
 				];
 			break
 		}
