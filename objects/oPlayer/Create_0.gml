@@ -6,14 +6,13 @@ event_inherited();
 estado = P_ESTADO.PARADO;
 estado_txt = "parado";
 
-energia = 100;
-energia_max = 100;
-energia_rec = .5;
-energia_cons = .3;
-
 arma = noone
 
 //timer_tiro = 0;
+inimigosMortos = 0;
+moedas = 0
+
+statusPlayer()
 
 keyboard_set_map(ord("W"),vk_up);
 keyboard_set_map(ord("S"),vk_down);
