@@ -40,7 +40,7 @@ function atualizaInterface(){
     var _objetos = [
 		{ obj: oLinguagem, sprPT: spt_br, sprEN: sen_us},
 		{ obj: oIniciar, sprPT: sIniciar, sprEN: sStart },
-		{ obj: oAjustes, sprPT: sConfiguracao, sprEN: sSettings },
+		{ obj: oAjustes, sprPT: sAjustes, sprEN: sSettings },
 		{ obj: oSair, sprPT: sSair, sprEN: sLeave },
 		{ obj: oVoltar, sprPT: sVoltar, sprEN: sBack },
 		{ obj: oReiniciar, sprPT: sReiniciar, sprEN: sRestart }

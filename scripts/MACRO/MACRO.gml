@@ -1,2 +1,2 @@
-#macro VEL 4
-#macro MAXVEL 6
+#macro inimigosColisao [oAtirador, oBombardeiro, oMago]
+#macro mouseDir point_direction(x,y,mouse_x,mouse_y)

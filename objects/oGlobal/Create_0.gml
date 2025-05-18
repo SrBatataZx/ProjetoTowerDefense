@@ -2,13 +2,17 @@
 // Você pode escrever seu código neste editor
 global.debug = false;
 global.pause = false;
-global.PauseMenu = false;
+global.pauseMenu = false;
+global.morteMenu = false;
 
 // Variável global para armazenar os dados do JSON
-global.json_data = noone;
+global.statusData = noone;
+global.rodadasData = noone;
 
 global.fullscreen = carregarConfig("FullScreen",1);
 window_set_fullscreen(global.fullscreen);
+
+global.acessibilidade = carregarConfig("Acessibilidade",0);
 
 global.audioGeral = 1
 global.sfx = carregarConfig("SFX_Volume", 1)
@@ -20,6 +24,17 @@ global.click_processed = false;
 
 selecionaRoom(rMenu)
 //rooms = [rJogo,rMapa1]
+
+
+
+
+
+
+
+
+
+
+
 
 #macro DISCORD_APP_ID "1257094632232194118"
 

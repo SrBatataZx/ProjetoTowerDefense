@@ -17,13 +17,13 @@ function checaTeclaPressionada(){
 	// Verifica se a tecla "Esc" ou "P" foi pressionada para alternar o pause
 	if(tipoTecla("pressed",vk_escape) || tipoTecla("pressed",(ord("P")))){
 		global.pause = !global.pause
-		switch(global.PauseMenu){
+		switch(global.pauseMenu){
 			case 1:
 				desativaLayer("ui")
-				global.PauseMenu = false
+				global.pauseMenu = false
 			break
 			case 0:
-				criaMenu("Pause")
+				menu("criaMenu","Pause")
 			break
 		}
 		chamaDebug("Pause", global.pause)
@@ -49,4 +49,9 @@ function changeFullscreen(){
 	window_set_fullscreen(global.fullscreen)
 	salvarConfig("FullScreen", global.fullscreen);
 	chamaDebug("FullScreen", window_get_fullscreen())
+}
+
+///function função auxiliar para destruir objetos
+function destroyObjeto(_obj){
+	instance_destroy(_obj)
 }
