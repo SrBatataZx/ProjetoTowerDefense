@@ -36,7 +36,7 @@
   "origin":4,
   "parent":{
     "name":"fixo",
-    "path":"folders/Sprites/UI/interagiveis/fixo.yy",
+    "path":"folders/Sprites/Interface/HUD/fixo.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

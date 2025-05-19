@@ -27,7 +27,7 @@
   "origin":4,
   "parent":{
     "name":"portugues",
-    "path":"folders/Sprites/UI/interagiveis/portugues.yy",
+    "path":"folders/Sprites/Interface/HUD/portugues.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
