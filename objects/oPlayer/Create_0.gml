@@ -11,6 +11,8 @@ arma = noone
 //timer_tiro = 0;
 inimigosMortos = 0;
 moedas = 0
+global.cristais = carregarDados("cristais",0)
+cristais = 0
 
 statusPlayer()
 

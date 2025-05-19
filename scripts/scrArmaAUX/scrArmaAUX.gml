@@ -38,6 +38,7 @@ function tiroColisao(){
 			instance_destroy(self.id);
 			if(instanciaInimigo.vida <= 0){
 				oPlayer.inimigosMortos +=1
+				global.inimigosMortos +=1;
 				var _moedasMin = real(instanciaInimigo.moedasMin);
 				var _moedasMax = real(instanciaInimigo.moedasMax);
 				var _moedas = irandom_range(_moedasMin,_moedasMax)
@@ -46,7 +47,7 @@ function tiroColisao(){
 					inst.speed = random_range(2, 5);
 					inst.direction = random(360);
 				}
-				show_debug_message("Foram criadas: " + string(_moedas) + " moedas");
+				//show_debug_message("Foram criadas: " + string(_moedas) + " moedas");
 				instance_destroy(instanciaInimigo);
 			}
 			break;

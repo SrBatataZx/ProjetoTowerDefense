@@ -2,14 +2,12 @@
 // Você poade escrever seu código neste editor
 if(!global.pause){
 	playerStateMachine()
-	
 	#region mover para script
 	//var moeda = instance_place(x,y,oMoeda);
 	//if (moeda != noone) {
 	//    instance_destroy(moeda);
 	//    moedas += 1;
 	//}
-	
 	with (oMoeda) {
 		var _dist = point_distance(x, y, other.x, other.y);
 		
@@ -25,6 +23,13 @@ if(!global.pause){
 			instance_destroy();
 		}
 	}
+	// if (instance_exists(oEstrutura)) {
+	//	 if (oEstrutura.vida <= 0 && !oEstrutura.recompensa_dada) {
+	//		global.cristais += moedas / 2;
+	//		//salvarDados("cristais", global.cristais);
+	//		oEstrutura.recompensa_dada = true;
+	//	}
+	//}
 	#endregion
 }
 Script23()
