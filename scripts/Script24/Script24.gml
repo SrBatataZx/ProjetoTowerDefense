@@ -2,5 +2,6 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 para obter mais informações
 function changeAcessibilidade(){
 	global.acessibilidade = !global.acessibilidade;
+	//chamaDebug("Acessibilidade",global.acessibilidade)
 	salvarConfig("Acessibilidade", global.acessibilidade)
 }
