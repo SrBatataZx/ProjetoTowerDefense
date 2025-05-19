@@ -11,19 +11,19 @@ function checaTeclaPressionada(){
 	if(tipoTecla("pressed",(ord("R")))){
 		game_restart()
 	}
-	//if(tipoTecla("pressed",(ord("G")))){
-	//	Script24()
-	//}
 	// Verifica se a tecla "Esc" ou "P" foi pressionada para alternar o pause
 	if(tipoTecla("pressed",vk_escape) || tipoTecla("pressed",(ord("P")))){
 		global.pause = !global.pause
 		switch(global.pauseMenu){
 			case 1:
-				desativaLayer("ui")
-				global.pauseMenu = false
+				resetGameData("paused")
 			break
 			case 0:
+			if(room == rJogo){
 				menu("criaMenu","Pause")
+			} else if(room == rLobby){
+				menu("criaMenu","Lobby")
+			}
 			break
 		}
 		chamaDebug("Pause", global.pause)
@@ -48,10 +48,28 @@ function changeFullscreen(){
 	global.fullscreen = !global.fullscreen
 	window_set_fullscreen(global.fullscreen)
 	salvarConfig("FullScreen", global.fullscreen);
-	chamaDebug("FullScreen", window_get_fullscreen())
+	//chamaDebug("FullScreen", window_get_fullscreen())
 }
 
 ///function função auxiliar para destruir objetos
 function destroyObjeto(_obj){
 	instance_destroy(_obj)
+}
+
+function resetGameData(_data) {
+	switch(_data){
+		case "all":
+		    var dados = loadJsonData("spawn");
+			global.inimigosMortos = 0
+		    dados.qtdMax = dados.qtdMaxBase;
+			global.pause = false; 
+			global.pauseMenu = false;
+			room_restart();
+		break;
+		case "paused":
+			global.pause = false; 
+			global.pauseMenu = false;
+			desativaLayer("ui")
+		break;
+	}
 }

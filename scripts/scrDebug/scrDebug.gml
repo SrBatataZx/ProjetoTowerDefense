@@ -3,15 +3,18 @@ function chamaDebug(qual,estado){
 	switch(qual){
 		case "Pause":
 			mensagem = "Jogo " + (estado ? "Pausado" : "Resumido");
-			break;
+		break;
 			
 		case "FullScreen":
 			mensagem = "Fullscreen " + (estado ? "Ligado" : "Desligado");
-			break;
+		break;
 			
 		case "Debug":
 			mensagem = "Debug " + (estado ? "Ligado" : "Desligado");
-			break;
+		break;
+		case "Acessibilidade":
+			mensagem = "Acessibilidade " + (estado ? "Ligado" : "Desligado");
+		break;
 			
 		default:
 			mensagem = "Debug: Açao desconhecida"
@@ -25,19 +28,37 @@ function debug(_debug){
 		//debugs do objeto global
 		case "global":
 			if(global.debug){
+				_y = 0
+				_x = sprite_get_width(sVida) + 20
 				if(instance_exists(oGlobal)){
-					draw_text(x,y, "objeto global existe")
+					draw_text(_x,_y, "objeto global existe")
 				} else {
-					draw_text(x,y, "objeto global nao existe")
+					draw_text(_x,_y, "objeto global nao existe")
 				}
+				_y += 20
 				if(global.pause){
-					draw_text(x,y + 20,"pausado")
+					draw_text(_x,_y,"pausado")
 				} else {
-					draw_text(x,y + 20,"rodando")
+					draw_text(_x,_y,"rodando")
 				}
-				draw_text(x, y + 60, "Volume: " + string(global.sfx))
-				draw_text(x, y + 80, "FullScreen: " + string(global.fullscreen))
-				draw_text(x,y + 100, game_get_speed(gamespeed_fps))
+				_y +=20
+				draw_text(_x, _y, "Volume: " + string(global.sfx))
+				_y +=20
+				if(global.fullscreen){
+					draw_text(_x,_y,"FullScreen ativado")
+				} else {
+					draw_text(_x,_y,"FullScreen desativado")
+				}
+				_y +=20
+				if(global.acessibilidade){
+					draw_text(_x,_y,"Acessibilidade ativado")
+				} else {
+					draw_text(_x,_y,"Acessibilidade desativado")
+				}
+				_y +=20
+				draw_text(_x,_y, game_get_speed(gamespeed_fps))
+				_y +=20
+				draw_text(_x,_y, "Inimigos: " + string(instance_number(oInimigoPai)))
 			}
 			//if(instance_exists(oGlobal)){
 			//	draw_text(x,y, "objeto global existe")

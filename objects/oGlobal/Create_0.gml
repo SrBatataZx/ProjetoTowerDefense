@@ -25,7 +25,7 @@ global.click_processed = false;
 selecionaRoom(rMenu)
 //rooms = [rJogo,rMapa1]
 
-
+global.inimigosMortos = 0;
 
 
 
