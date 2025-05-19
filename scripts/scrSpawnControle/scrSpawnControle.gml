@@ -7,6 +7,12 @@ function Script24() {
 	var totalPeso = 0;
 	var totalExistentes = 0;
 	
+	if(global.inimigosMortos >= 10){
+		qtdMax += floor(global.inimigosMortos / 10);
+		global.inimigosMortos %= 10;
+		spawnData.qtdMax = qtdMax
+	}
+	
 	for (var i = 0; i < array_length(listaInimigos); i++) {
 		var nome = listaInimigos[i].nome;
 		var peso = listaInimigos[i].peso;
@@ -53,8 +59,10 @@ function Script24() {
 			var _yy = _y + lengthdir_y(_dist, _angulo);
 			instance_create_layer(_xx, _yy, "animados", obj);
 			//criado apenas para debug
-			show_debug_message("Inimigo " + nomeInimigo + " criado em (" + string(_xx) + ", " + string(_yy) + ")");
+			//show_debug_message("Inimigo " + nomeInimigo + " criado em (" + string(_xx) + ", " + string(_yy) + ")");
+			show_debug_message("Quantidade maxima: " + string(qtdMax) + " Inimigos mortos: " + string(global.inimigosMortos))
 		}
+		
 	}
 }
 
