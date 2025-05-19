@@ -5,6 +5,7 @@
         { "nome": "mago", "peso": 30 }
     ],
     "qtdMax": 5,
+    "qtdMaxBase": 5,
     "fatordificuldade":[
         {"nivel": 1, "fator": 1},
         {"nivel": 2, "fator": 3},
