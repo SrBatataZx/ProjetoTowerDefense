@@ -31,7 +31,30 @@ segue_alvo = function(){
 	x = lerp(x, alvo.x, .1)
 	y = lerp(y, alvo.y, .1)
 	camera_set_view_pos(view_camera[0], _cam_x, _cam_y);
-}
+};
+//segue_alvo = function(){
+//	var _view_w = camera_get_view_width(view_camera[0]);
+//	var _view_h = camera_get_view_height(view_camera[0]);
+
+//	// Crie variáveis estáticas para manter a posição suavizada da câmera
+//	static cam_x = 0;
+//	static cam_y = 0;
+
+//	// Destino ideal da câmera (centralizado no alvo)
+//	var target_x = alvo.x - _view_w / 2;
+//	var target_y = alvo.y - _view_h / 2;
+
+//	// Suavização com lerp
+//	cam_x = lerp(cam_x, target_x, 0.1);
+//	cam_y = lerp(cam_y, target_y, 0.1);
+
+//	// Impede que a câmera ultrapasse os limites da sala
+//	cam_x = clamp(cam_x, 0, room_width - _view_w);
+//	cam_y = clamp(cam_y, 0, room_height - _view_h);
+
+//	// Atualiza a posição da câmera
+//	camera_set_view_pos(view_camera[0], cam_x, cam_y);
+//};
 segue_player = function(){
 	if(instance_exists(oPlayer)){
 		alvo = oPlayer;
@@ -39,9 +62,11 @@ segue_player = function(){
 		estado = segue_nada;
 	}
 	segue_alvo()
-	if(oEstrutura.vida > 0){
-		if(global.pause = false){
-			if (keyboard_check_released(vk_space)) estado = segue_casa;
+	if(instance_exists(oEstrutura)){
+		if(oEstrutura.vida > 0){
+			if(global.pause = false){
+				if (keyboard_check_released(vk_space)) estado = segue_casa;
+			}
 		}
 	}
 }
