@@ -54,13 +54,13 @@ function verificaClick(_objetos) {
 		if (position_meeting(mouse_x, mouse_y, _objetos[i].obj)) {
 			var inst = instance_position(mouse_x, mouse_y, _objetos[i].obj);
 			if (inst != noone) {
+				#region apenas debug
 				var debug_msg = "Objeto clicado: " + object_get_name(_objetos[i].obj);
-
 				if (variable_instance_exists(inst, "botaoFuncao")) {
 					debug_msg += " (Função: " + string(inst.botaoFuncao) + ")";
 				}
-
 				show_debug_message(debug_msg);
+				#endregion
 				_objetos[i].action(inst);
 			}
 			break;
@@ -73,12 +73,13 @@ function verificaClick(_objetos) {
 function checaBotaoObjeto(){
 	if(mouse_check_button_pressed(mb_left) && !global.click_processed){
 		global.click_processed = true;
+		//var _rooms = [rLobby,rJogo]
 		var _objetos = []
 		//verifica a sala atual e defines ações a objetos correspondentes
 		switch(room){
 			case rMenu:
 				_objetos = [
-					{obj: oIniciar, action: function() { room_goto(rJogo); } },
+					{obj: oIniciar, action: function() { room_goto(rLobby); } },
 					{obj: oSair, action: function() { game_end(); } },
 					/*room_goto(rConfiguracao)*/
 					{obj: oAjustes, action: function() { menu("mataMenu","Inicio"); menu("criaMenu","Configuracao"); } },
@@ -103,30 +104,33 @@ function checaBotaoObjeto(){
 					}
 				];
 			break;
-			case rJogo:
-				_objetos = [
-					{obj: oVoltar, action: function() { desativaLayer("ui"); global.pause = false; global.pauseMenu = false} },
-					{obj: oReiniciar, action: function() { room_restart(); global.pause = false; global.pauseMenu = false } },
-					{obj: oSair, action: function() { game_end(); } },
-					{obj: oMenos, action: function() { globalAudio("sfx","Diminuir"); } },
-					{obj: oMais, action: function() { globalAudio("sfx","Aumentar"); } },
-					{obj: oAvancar, action: function(inst) {
-						switch (inst.botaoFuncao) {
-							case "recuar": substituirLinguagem("Avancar"); break;
-							case "avancar": substituirLinguagem("Voltar"); break;
-							default: show_debug_message("Função desconhecida: " + string(inst.botaoFuncao));
+			default:
+				if (array_contains(rooms, room)) {
+					_objetos = [
+						{obj: oVoltar, action: function() { resetGameData("paused"); chamaDebug("Pause", global.pause)} },
+						{obj: oReiniciar, action: function() { resetGameData("all"); } },
+						{obj: oSair, action: function() { game_end(); } },
+						{obj: oMenos, action: function() { globalAudio("sfx","Diminuir"); } },
+						{obj: oMais, action: function() { globalAudio("sfx","Aumentar"); } },
+						{obj: oAvancar, action: function(inst) {
+							switch (inst.botaoFuncao) {
+								case "recuar": substituirLinguagem("Avancar"); break;
+								case "avancar": substituirLinguagem("Voltar"); break;
+								default: show_debug_message("Função desconhecida: " + string(inst.botaoFuncao));
+								}
+							} 
+						},
+						{obj: oBotao, action: function(inst) {
+							switch (inst.botaoFuncao) {
+								case "fullscreen": changeFullscreen(); break;
+								case "acessibilidade": changeAcessibilidade(); break;
+								default: show_debug_message("Função desconhecida: " + string(inst.botaoFuncao));
+								}
 							}
-						} 
-					},
-					{obj: oBotao, action: function(inst) {
-						switch (inst.botaoFuncao) {
-							case "fullscreen": changeFullscreen(); break;
-							case "acessibilidade": changeAcessibilidade(); break;
-							default: show_debug_message("Função desconhecida: " + string(inst.botaoFuncao));
-							}
-						}
-					}
-				];
+						},
+						{obj: oLobby, action: function() {room_goto(rLobby); } }
+					];
+				}
 			break
 		}
 		verificaClick(_objetos);

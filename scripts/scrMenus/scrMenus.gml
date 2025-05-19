@@ -29,6 +29,12 @@ function menu(_atividade,_menu){
 				case "Morte":
 					criaMenuMorte();
 				break;
+				case "Lobby":
+					if(!global.pauseMenu){
+						criaMenuLobby();
+						global.pauseMenu = true;
+					}
+				break;
 			}
 		break;
 		case "mataMenu":
@@ -71,18 +77,6 @@ function criaObjetosCentralizado(objeto, _x, _y, _funcao = ""){
 	if (argument_count > 3 && variable_instance_exists(inst, "botaoFuncao")) {
 	    inst.botaoFuncao = _funcao;
 	}
-    // Só cria se não existir nenhuma instância do tipo
-    //if (!instance_exists(objeto)) {
-    //    var inst = instance_create_layer(center_x + _x, center_y + _y, "ui", objeto);
-        
-    //    // Se a função foi passada e a instância tiver essa variável
-    //    if (argument_count > 3 && variable_instance_exists(inst, "botaoFuncao")) {
-    //        inst.botaoFuncao = _funcao;
-    //    }
-        
-    //    return inst;
-    //}
-    //return noone;
 }
 
 //function criaBotaoComFuncao(_x, _y, funcao){
@@ -97,6 +91,13 @@ function criaMenuConfiguracao(){
 	criaObjetosCentralizado(oVoltar, -400, 0);
 	criaElementosComun(400,0);
 }
+function criaMenuLobby(){
+	var y_position = 0;
+	criaObjetosCentralizado(oVoltar, 0, y_position);
+	y_position += 50;
+	criaObjetosCentralizado(oSair, 0, y_position);
+	criaElementosComun(400,0)
+}
 
 function criaMenuIniciar(){
 	var y_position = 0
@@ -108,16 +109,18 @@ function criaMenuIniciar(){
 }
 function criaMenuPause(){
 	var y_position = 0;
-    criaObjetosCentralizado(oVoltar, 0, y_position);
-    y_position += 50;
-    criaObjetosCentralizado(oReiniciar, 0, y_position);
-    y_position += 50;
-    criaObjetosCentralizado(oSair, 0, y_position);
+	criaObjetosCentralizado(oVoltar, 0, y_position);
+	y_position += 50;
+	criaObjetosCentralizado(oReiniciar, 0, y_position);
+	y_position += 50;
+	criaObjetosCentralizado(oSair, 0, y_position);
 	criaElementosComun(400,0)
 }
 function criaMenuMorte(){
 	var y_position = 0
 	criaObjetosCentralizado(oReiniciar, 0,y_position)
+	y_position += 50
+	criaObjetosCentralizado(oLobby, 0,y_position)
 	y_position += 50
 	criaObjetosCentralizado(oSair, 0,y_position)
 }

@@ -1,21 +1,39 @@
 function selecionaRoom(_room_pick) {
-	// Verifica se a sala atual é a mesma que a sala escolhida
-	if (room != _room_pick) {
-		return; // Sai da função se a sala não for a correta
+	var salas = [];
+
+	// Verifica se é array ou valor único
+	if (is_array(_room_pick)) {
+		salas = _room_pick;
+	} else {
+		salas = [_room_pick];
 	}
-	// Verifica a sala escolhida e executa as ações correspondentes
-	switch (_room_pick) {
-		case rMenu:
-			menu("criaMenu","Inicio"); // Cria o menu inicial
-		break;
-		case rJogo:
+
+	// Verifica se a sala atual está entre as salas passadas
+	if (!array_contains(salas, room)) {
+		return;
+	}
+
+	// Lógica por sala
+	if (array_contains(salas, rMenu)) {
+		menu("criaMenu", "Inicio");
+	}
+	
+	if (array_contains(salas, rJogo) || array_contains(salas, rLobby)) {
+		checaTeclaPressionada();
+		if(instance_exists(oEstrutura)){
 			if (oEstrutura.vida > 0) {
-				checaTeclaPressionada(); // Verifica pressionamentos de tecla
 				global.morteMenu = false;
 			} else if (oEstrutura.vida == 0 && !global.morteMenu) {
-				menu("criaMenu","Morte"); // Cria o menu de morte
+				if (!oEstrutura.recompensa_dada) {
+					global.cristais += oPlayer.moedas / 2;
+					oPlayer.cristais = oPlayer.moedas / 2;
+					salvarDados("cristais", global.cristais);
+					oEstrutura.recompensa_dada = true;
+					//show_debug_message(string(oPlayer.moedas) + " Moedas convertidas para: " + string(oPlayer.cristais) + " Cristais")
+			    }
+				menu("criaMenu", "Morte");
 				global.morteMenu = true;
 			}
-		break;
+		}
 	}
 }
