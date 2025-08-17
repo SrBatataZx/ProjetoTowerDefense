@@ -11,7 +11,7 @@ if(!global.pause){
 	with (oMoeda) {
 		var _dist = point_distance(x, y, other.x, other.y);
 		
-		if (_dist < 100) {
+		if (_dist < other.dropsAtracao) {
 		    var _dir = point_direction(x, y, other.x, other.y);
 		    var _vel = clamp(2 - _dist * 0.015, 0.5, 2);
 		
@@ -32,5 +32,5 @@ if(!global.pause){
 	//}
 	#endregion
 }
-Script23()
+selecionaArma()
 
