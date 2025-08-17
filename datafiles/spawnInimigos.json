@@ -1,11 +1,11 @@
 {
-    "inimigos":[
-        { "nome": "atirador", "peso": 50 },
-        { "nome": "bombardeiro", "peso": 20 },
-        { "nome": "mago", "peso": 30 }
-    ],
     "qtdMax": 5,
     "qtdMaxBase": 5,
+    "inimigos":{
+        "atirador": {"peso": 50 },
+        "bombardeiro": {"peso": 20 },
+        "mago": {"peso": 30 }
+    },
     "fatordificuldade":[
         {"nivel": 1, "fator": 1},
         {"nivel": 2, "fator": 3},

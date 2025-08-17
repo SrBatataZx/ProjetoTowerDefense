@@ -1,106 +1,23 @@
 {
-    "inimigosData":[
-        {
-            "inimigo": "bombardeiro",
+    "entidades":{
+        "player": {
             "status": {
-                "vida": 5.0,
                 "velocidade": 4.0,
-                "velocidadeMax": 8.0,
-                "ataque":{
-                    "tipo": "explosivo",
-                    "dano": 2.0
-                }
+                "velocidadeMax": 6.0 ,
+                "energia": 100,
+                "energiaMax": 100,
+                "energiaRec": 0.5, 
+                "energiaCons": 0.3
             },
-            "drops":{
-                "moedasMin": 30,
-                "moedasMax": 50
-            },
-            "statusPorNivel": {
-                "nivel_1": { "vida": 1.0, "dano": 1.0, "velocidade": 1.0 },
-                "nivel_2": { "vida": 1.5, "dano": 1.5, "velocidade": 1.5 },
-                "nivel_3": { "vida": 2.0, "dano": 2.0, "velocidade": 2.0 }
-            }
-        },
-        {
-            "inimigo": "atirador",
-            "status": {
-                "vida": 5.0,
-                "velocidade": 2.0,
-                "ataque":{
-                    "tipo": "tiro",
-                    "dano": 2.0,
-                    "velocidade": 8.0
-                }
-            },
-            "drops":{
-                "moedasMin": 5,
-                "moedasMax": 20
-            },
-            "statusPorNivel": {
-                "nivel_1": { "vida": 1.0, "dano": 1.0, "velocidade": 1.0 },
-                "nivel_2": { "vida": 1.5, "dano": 1.5, "velocidade": 1.5 },
-                "nivel_3": { "vida": 2.0, "dano": 2.0, "velocidade": 2.0 }
-            }
-        },
-        {
-            "inimigo": "mago",
-            "status": {
-                "vida": 5.0,
-                "velocidade": 4.0,
-                "ataque":{
-                    "tipo": "magico",
-                    "dano": 4.0,
-                    "velocidade": 10.0
-                }
-            },
-            "drops":{
-                "moedasMin": 10,
-                "moedasMax": 20
-            },
-            "statusPorNivel": {
-                "nivel_1": { "vida": 1.0, "dano": 1.0, "velocidade": 1.0 },
-                "nivel_2": { "vida": 1.5, "dano": 1.5, "velocidade": 1.5 },
-                "nivel_3": { "vida": 2.0, "dano": 2.0, "velocidade": 2.0 }
-            }
-        }
-    ],
-    "playerData":[
-        {
-            "player": "player",
-            "status": { "velocidade": 4.0, "velocidadeMax": 6.0 , "energia": 100, "energiaMax": 100, "energiaRec": 0.5, "energiaCons": 0.3},
             "dropsAtracao": 100
-        }
-    ],
-    "armasData":[
-        {
-            "arma": "kitmedico",
-            "sprite": "sKitMedico",
-            "projetilSprite": "sSeringa",
-            "status": { "dano": 2.0, "velocidade": 20, "tempoRecarga": 10, "precisao": 1.0 }
         },
-        {
-            "arma": "balacanhao",
-            "sprite": null,
-            "projetilSprite": null,
-            "status": { "dano": 5.0, "velocidade": 1, "tempoRecarga": 120, "precisao": 1.0 }
-        },
-        {
-            "arma": "caderno",
-            "sprite": "sCaderno",
-            "projetilSprite": "sFolha",
-            "status": { "dano": 2.0, "velocidade": 5, "tempoRecarga": 10, "precisao": 1.0 }
-        },
-        {
-            "arma": "apagador",
-            "sprite": "sApagador",
-            "projetilSprite": "sGiz",
-            "status": { "dano": 1.0, "velocidade": 50, "tempoRecarga": 10, "precisao": 1.0 }
+        "estruturas":{
+            "casa":{
+                "status": {
+                    "vida": 100,
+                    "vidaMax": 100
+                }
+            }
         }
-    ],
-    "estruturaData":[
-        {
-            "estrutura": "estrutura",
-            "status": { "vida": 100, "vidaMax": 100}
-        }
-    ]
+    }
 }

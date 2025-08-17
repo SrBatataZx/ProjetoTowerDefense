@@ -1,0 +1,88 @@
+{
+    "armasData":{
+        "kitmedico": {
+            "sprite": "sKitMedico",
+            "projetilSprite": "sSeringa",
+            "status": { 
+                "raridade":{
+                    "normal":{
+                        "dano": 4.0, 
+                        "velocidade": 20, 
+                        "tempoRecarga": 50, 
+                        "precisao": 1.0 
+                    },
+                    "raro":{
+                        "dano": 5.0, 
+                        "velocidade": 20, 
+                        "tempoRecarga": 40, 
+                        "precisao": 1.0 
+                    },
+                    "epico":{
+                        "dano": 6.0, 
+                        "velocidade": 20, 
+                        "tempoRecarga": 30, 
+                        "precisao": 1.0 
+                    }
+                }
+            },
+            "upgrade":{
+                "aviao":{
+                    "chance": 0.15,
+                    "dano": 10
+                }
+            }
+        },
+        "caderno": {
+            "sprite": "sCaderno",
+            "projetilSprite": "sFolha",
+            "status": {
+                "raridade":{
+                    "normal":{
+                        "dano": 2.0, 
+                        "velocidade": 5, 
+                        "tempoRecarga": 30, 
+                        "precisao": 1.0
+                    },
+                    "raro":{
+                        "dano": 2.5, 
+                        "velocidade": 7, 
+                        "tempoRecarga": 25, 
+                        "precisao": 1.0
+                    },
+                    "epico":{
+                        "dano": 3, 
+                        "velocidade": 10, 
+                        "tempoRecarga": 20, 
+                        "precisao": 1.0
+                    }
+                }
+            }
+        },
+        "apagador": {
+            "sprite": "sApagador",
+            "projetilSprite": "sGiz",
+            "status": { 
+                "raridade":{
+                    "normal":{
+                        "dano": 1.0, 
+                        "velocidade": 50, 
+                        "tempoRecarga": 15, 
+                        "precisao": 1.0 
+                    },
+                    "raro":{
+                        "dano": 1.5, 
+                        "velocidade": 50, 
+                        "tempoRecarga": 10, 
+                        "precisao": 1.0 
+                    },
+                    "epico":{
+                        "dano": 2.0, 
+                        "velocidade": 50, 
+                        "tempoRecarga": 7, 
+                        "precisao": 1.0 
+                    }
+                }
+            }
+        }
+    }
+}

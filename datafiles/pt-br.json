@@ -1,0 +1,12 @@
+{
+    "menus":{
+        "iniciar":"iniciar",
+        "ajustes":"ajustes",
+        "sair":"sair",
+        "voltar":"voltar",
+        "reiniciar":"reiniciar"
+    },
+    "frases":{
+
+    }
+}

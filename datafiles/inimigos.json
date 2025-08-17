@@ -1,0 +1,66 @@
+{
+    "inimigosData":{
+        "bombardeiro": {
+            "descricao" : "Avança sobre o objetivo quanto estiver a 5 metros de distância.",
+            "status": {
+                "vida": 5.0,
+                "velocidade": 4.0,
+                "velocidadeMax": 8.0,
+                "ataque":{
+                    "tipo": "explosivo",
+                    "dano": 2.0
+                }
+            },
+            "drops": {
+                "moedasMin": 30,
+                "moedasMax": 50
+            },
+            "statusPorNivel": {
+                "_1": { "vida": 1.0, "dano": 1.0, "velocidade": 1.0 },
+                "_2": { "vida": 1.5, "dano": 1.5, "velocidade": 1.5 },
+                "_3": { "vida": 2.0, "dano": 2.0, "velocidade": 2.0 }
+            }
+        },
+        "atirador": {
+            "descricao": "",
+            "status": {
+                "vida": 5.0,
+                "velocidade": 2.0,
+                "ataque":{
+                    "tipo": "tiro",
+                    "dano": 2.0,
+                    "velocidade": 8.0
+                }
+            },
+            "drops": {
+                "moedasMin": 30,
+                "moedasMax": 50
+            },
+            "statusPorNivel": {
+                "_1": { "vida": 1.0, "dano": 1.0, "velocidade": 1.0 },
+                "_2": { "vida": 1.5, "dano": 1.5, "velocidade": 1.5 },
+                "_3": { "vida": 2.0, "dano": 2.0, "velocidade": 2.0 }
+            }
+        },
+        "mago": {
+            "status": {
+                "vida": 5.0,
+                "velocidade": 4.0,
+                "ataque":{
+                    "tipo": "magico",
+                    "dano": 4.0,
+                    "velocidade": 10.0
+                }
+            },
+            "drops": {
+                "moedasMin": 10,
+                "moedasMax": 20
+            },
+            "statusPorNivel": {
+                "_1": { "vida": 1.0, "dano": 1.0, "velocidade": 1.0 },
+                "_2": { "vida": 1.5, "dano": 1.5, "velocidade": 1.5 },
+                "_3": { "vida": 2.0, "dano": 2.0, "velocidade": 2.0 }
+            }
+        }
+    }
+}
