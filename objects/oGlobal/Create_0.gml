@@ -8,6 +8,8 @@ global.morteMenu = false;
 // Variável global para armazenar os dados do JSON
 global.statusData = noone;
 global.rodadasData = noone;
+global.armasData = noone;
+global.inimigosData = noone;
 
 global.fullscreen = carregarConfig("FullScreen",1);
 window_set_fullscreen(global.fullscreen);

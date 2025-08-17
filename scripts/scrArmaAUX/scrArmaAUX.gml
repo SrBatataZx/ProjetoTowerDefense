@@ -1,26 +1,47 @@
-/// @function							criaTiro(_tiro,_sprite)
-/// @param {Asset.GMObject} _tiro		objeto que servirá como projétil
-/// @param {Asset.GMSprite} _sprite		sprite que o objeto projétil irá receber
-/// @description função auxiliar para o sistema disparo de projétil
+/// @function							disparo(_tiro, _sprite)
+/// @param {Asset.GMObject} _tiro		Objeto que será instanciado como projétil
+/// @param {Asset.GMSprite} _sprite		Sprite que o projétil irá receber
+/// @description Verifica disparo e instancia o projétil com atributos definidos
 
-function criaTiro(_tiro, _sprite){
-	//var _dir = point_direction(x,y,mouse_x,mouse_y);
-	var tiro = instance_create_depth(x,y, 1,_tiro);//instance_create_layer(x,y,"tiro",tiro)
-	tiro.speed = _tiro.velocidade;
-	tiro.direction = mouseDir;
-	timerTiro = _tiro.tempoRecarga;
-	tiro.sprite_index = _sprite;
-	tiro.image_angle = mouseDir - 90;
-}
+/// @function							disparoComTiro(_tiro, _sprite)
+/// @param {Asset.GMObject} _tiro		Objeto que será instanciado como projétil
+/// @param {Asset.GMSprite} _sprite		Sprite que o projétil irá receber
+/// @description Verifica disparo e instancia o projétil com atributos definidos. Se o sprite tiver múltiplos frames, escolhe um aleatório.
 
-function disparo(tiro,sprite){
+function disparo(_tiro, _sprite) {
 	var _mb_left = mouse_check_button(mb_left);
 	var tiroLivre = !global.pause && _mb_left && timerTiro <= 0;
 	timerTiro--;
-	if(tiroLivre){
-		criaTiro(tiro,sprite);
+
+	if (tiroLivre) {
+		var tiro = instance_create_depth(x, y, 1, _tiro);
+		tiro.speed        = _tiro.velocidade;
+		tiro.direction    = mouseDir;
+		timerTiro         = _tiro.tempoRecarga;
+		tiro.sprite_index = _sprite;
+		tiro.image_angle  = mouseDir - 90;
+
+		// Se o sprite tiver mais de 2 frames, escolhe um aleatório
+		//if (sprite_get_number(_sprite) > 1) {
+		//	tiro.image_index = irandom(sprite_get_number(_sprite) - 1);
+		//	//tiro.image_angle  = mouseDir - 50;
+		//}
+		teste(tiro, _sprite);
 	}
 }
+function teste(_tiroInstance, _spriteIndex) {
+    if (oPlayer.arma == oCaderno && sprite_get_number(_spriteIndex) > 1) {
+        var chance = 0.1; // Pode ajustar isso depois se quiser
+        
+        _tiroInstance.image_index = (random(1) < chance) ? 1 : 0;
+        
+        if (_tiroInstance.image_index == 1) {
+            _tiroInstance.dano = 10;
+            _tiroInstance.image_angle = mouseDir - 50;
+        }
+    }
+}
+
 //função para realizar a colisão e dano ao inimigo.
 //o projétil ao colidir com o inimigo ou com a parede (oColisao) irá ser destruido
 function tiroColisao(){

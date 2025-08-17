@@ -1,13 +1,13 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 //var _rooms = [rJogo,rMapa1]
-selecionaRoom(rooms)
+selecionaRoom(ROOMS)
 if(instance_exists(oEstrutura)){
 	if(oEstrutura.vida == 0){
 		global.pause = true
 	}
 	if(!global.pause){
-		Script24()
+		ControlaSpawn()
 	}
 }
 

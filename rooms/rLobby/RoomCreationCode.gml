@@ -1,0 +1,1 @@
+instance_create_layer(oPlayer.x + 100,oPlayer.y + 100,"player_inimigo", oPlayer)
