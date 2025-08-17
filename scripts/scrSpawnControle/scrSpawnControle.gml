@@ -1,4 +1,4 @@
-function Script24() {
+function ControlaSpawn() {
 	var spawnData = loadJsonData("spawn");
 	var listaInimigos = spawnData.inimigos;
 	var qtdMax = spawnData.qtdMax;
@@ -13,20 +13,21 @@ function Script24() {
 		spawnData.qtdMax = qtdMax
 	}
 	
-	for (var i = 0; i < array_length(listaInimigos); i++) {
-		var nome = listaInimigos[i].nome;
-		var peso = listaInimigos[i].peso;
-		var obj = stringParaObjeto(nome);
-		
-		var existentes = instance_number(obj);
-		array_push(chances, {
-			nome: nome, //criado apenas para debug
-			objeto: obj,
-			peso: peso,
-			existentes: existentes
-		});
-		totalPeso += peso;
-	}
+    var tiposInimigos = variable_struct_get_names(listaInimigos);
+    for (var i = 0; i < array_length(tiposInimigos); i++) {
+        var nome = tiposInimigos[i];
+        var peso = listaInimigos[$ nome].peso;
+        var obj = stringParaObjeto(nome);
+        
+        var existentes = instance_number(obj);
+        array_push(chances, {
+            nome: nome, //criado apenas para debug
+            objeto: obj,
+            peso: peso,
+            existentes: existentes
+        });
+        totalPeso += peso;
+    }
 
 	for (var i = 0; i < array_length(chances); i++) {
 		totalExistentes += chances[i].existentes;
@@ -79,7 +80,7 @@ function stringParaObjeto(_nome){
 	}
 }
 
-//function Script24(){
+//function ControlaSpawn(){
 //	var dados = loadJsonData("spawn");
 //	var lista = dados.inimigos;
 	
