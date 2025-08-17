@@ -2,54 +2,61 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 para obter mais informações
 // Função para verificar teclas pressionadas e realizar as ações
 function checaTeclaPressionada(){
-	// Verifica se a tecla "L" foi pressionada para alternar o modo de debug
-	if(tipoTecla("pressed",(ord("L")))){
-		global.debug = !global.debug
-		chamaDebug("Debug", global.debug)
-	}
-	// Verifica se a tecla "R" foi pressionada para reiniciar o jogo
-	if(tipoTecla("pressed",(ord("R")))){
-		game_restart()
-	}
-	// Verifica se a tecla "Esc" ou "P" foi pressionada para alternar o pause
-	if(tipoTecla("pressed",vk_escape) || tipoTecla("pressed",(ord("P")))){
-		global.pause = !global.pause
-		switch(global.pauseMenu){
-			case 1:
-				resetGameData("paused")
-			break
-			case 0:
-			if(room == rJogo){
-				menu("criaMenu","Pause")
-			} else if(room == rLobby){
-				menu("criaMenu","Lobby")
-			}
-			break
-		}
-		chamaDebug("Pause", global.pause)
-	}
-	// Verifica se a tecla "F11" foi pressionada para alternar o modo fullscreen
-	if(tipoTecla("pressed",vk_f11)){
-		changeFullscreen()
-	}
+    if (tipoTecla("pressed", TOGGLE_DEBUG)) {
+        global.debug = !global.debug;
+        chamaDebug("Debug", global.debug);
+        return;
+    }
+    
+    if (tipoTecla("pressed", RESTART_GAME)) {
+        game_restart();
+        return;
+    }
+    
+    if (tipoTecla("pressed", TOGGLE_PAUSE1) || tipoTecla("pressed", TOGGLE_PAUSE2)) {
+        handlePauseState();
+        return;
+    }
+    
+    if (tipoTecla("pressed", TOGGLE_FULLSCREEN)) {
+        toggleFullscreen();
+    }
 }
 //funcao auxiliar para checar a forma que é assionada a tecla, e inclui a tecla em si na verificação.
 function tipoTecla(tipo,tecla){
 	switch(tipo){
-		case "pressed":
-			return keyboard_check_pressed(tecla);
-		case "released":
-			return keyboard_check_released(tecla);
+		case "pressed": return keyboard_check_pressed(tecla);
+		case "released": return keyboard_check_released(tecla);
+		default: return false;
 	}
-	return false;
 }
 //funcao auxiliar para setar a forma da tela
-function changeFullscreen(){
+function toggleFullscreen(){
 	global.fullscreen = !global.fullscreen
 	window_set_fullscreen(global.fullscreen)
 	salvarConfig("FullScreen", global.fullscreen);
-	//chamaDebug("FullScreen", window_get_fullscreen())
+	chamaDebug("FullScreen", window_get_fullscreen())
 }
+function handlePauseState() {
+    global.pause = !global.pause;
+    
+    switch (global.pauseMenu) {
+        case 1:
+            resetGameData("paused");
+            break;
+            
+        case 0:
+			if(room == rJogo && !global.morteMenu){
+				menu("criaMenu","Pause")
+			} else if(room == rLobby){
+				menu("criaMenu","Lobby")
+			}
+            break;
+    }
+    
+    chamaDebug("Pause", global.pause);
+}
+
 
 ///function função auxiliar para destruir objetos
 function destroyObjeto(_obj){
